@@ -121,8 +121,17 @@
     </div>
   </footer>
 
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span>
+  </div>
+
   <!-- main JS -->
   <script src="js/main.js"></script>
+  <script>
+    $(window).on('load', function() {
+      $('.loader-wrapper').fadeOut('slow');
+    });
+  </script>
 
 </body>
 
