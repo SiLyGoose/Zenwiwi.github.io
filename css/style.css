@@ -227,7 +227,12 @@ footer span {
 }
 
 .icon a i:hover {
+	transform: scale(1.5);
+
 	cursor: pointer;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: all 265ms ease-in;
 }
 
 .icon a:hover::before {
@@ -241,30 +246,18 @@ footer span {
 }
 
 .github a i:hover {
-	transform: scale(1.5);
 	color: black;
 	background-color: black;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	transition: all 265ms ease-in;
 }
 
 .discord a i:hover {
-	transform: scale(1.5);
 	color: rgb(125,148,221);
 	background-color: rgb(125,148,221);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	transition: all 265ms ease-in;
 }
 
 .twitch a i:hover {
-	transform: scale(1.5);
 	color: rgb(145,71,255);
 	background-color: rgb(145,71,255);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	transition: all 265ms ease-in;
 }
 
 .links {
