@@ -32,6 +32,12 @@
     }
   }
   window.onload = redirectToCorrectPage;
+
+// Locate file link path
+//   function goToInternalLink(path) {
+//       var domain = 'http://javking-site.herokuapp.com';
+//       window.location.href = domain + "/" + path;
+//   }
 </script>
 
  <div id="clouds">
@@ -47,7 +53,7 @@
             <hr>
             <div class='_1'>THE PAGE</div>
             <div class='_2'>WAS NOT FOUND</div>
-            <a class='btn' href='{{ "/" | absolute_url }}'>BACK TO JAVKING</a>
+            <a class='btn' href='home.html'>BACK TO HOME</a>
         </div>
 
 <style>

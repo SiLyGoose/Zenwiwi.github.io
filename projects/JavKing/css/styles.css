@@ -10,11 +10,6 @@
 	src: url('polices/Lato-Regular.ttf');
 }
 
-@font-face {
-    font-family: 'Righteous';
-    src: local('fonts/Righteous-Regular.ttf')
-}
-
 html {
 	width: 100%;
 	height: 100%;
@@ -68,22 +63,6 @@ a:hover, a:focus {
     overflow: hidden;
 }
 
-.avatarblock {
-    border-radius: 50%;
-    border: 5px #c6f6f6 solid;
-    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-    transform: translatey(0px);
-    display: block;
-    margin: auto;
-    overflow: hidden;
-}
-
-.borderline {
-    width: 25%;
-    border-bottom: 2px solid white;
-    margin: 0 auto 3%;
-}
-
 .toptext h1 {
 	color: #ddaedb;
 	font: 700 48px Times New Roman, Times, serif;
@@ -116,11 +95,7 @@ footer {
 
 	.bigavatar {
 		width: 250px;
-    }
-    
-    .avatarblock {
-        width: 150px;
-    }
+	}
 
 	.toptext h1 {
 		font-size: 40px;
@@ -129,11 +104,7 @@ footer {
 	.icon a i {
 		font-size: 20px;
 		padding: 7px;
-    }
-    
-    .main-motto {
-        font-size: 20px;
-    }
+	}
 
 }
 
@@ -153,19 +124,11 @@ footer {
 	}
 	.bigavatar {
 		width: 230px;
-    }
-    
-    .avatarblock {
-        width: 130px;
-    }
+	}
 
 	.toptext h3 span {
 		font-size: 25px;
-    }
-    
-    .main-motto {
-        font-size: 10px;
-    }
+	}
 }
 
 @media screen and (max-width: 900px) {
@@ -180,11 +143,7 @@ footer {
 
 	.top {
 		padding: 20px !important;
-    }
-    
-    .main-motto {
-        font-size: 10px;
-    }
+	}
 }
 
 .pink {
@@ -277,7 +236,7 @@ footer span {
 }
 
 .top {
-	padding: 15px;
+	padding: 30px;
 }
 
 .block {
@@ -508,117 +467,6 @@ footer span {
 }
 
 .mainblock {
-
-}
-
-.text-wrapper {
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: auto;
-}
-
-#profile path {
-    stroke-dasharray: 1000;
-    /* stroke-dashoffset: 0; */
-    transform: scale(.5);
-}
-
-.align-center {
-    align-items: center;
-}
-
-.line-drawing {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    /* width: 290px;
-    height: 100%; */
-}
-
-.line-drawing.vertical {
-    flex-direction: row;
-}
-
-.main-motto {
-    letter-spacing: 4px;
-    font-size: 30px;
-    width: fit-content;
-    color: #c6f6f6;
-    margin: 0 auto;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
-}
-
-.sub-motto {
-    font-size: 15px;
-    color: white;
-    margin: auto;
-    /* font-family: Garamond, serif; */
-    font-family: 'Courier New', monospace;
-    /* letter-spacing: 0.5px; */
-}
-
-.header {
-
-}
-
-.container {
-    display: flex;
-    margin: 0 auto;
-    width: 80%;
-    height: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.project {
-    width: 40%;
-    margin: 20px;
-    position: relative;
-    background-color: white;
-    border-radius: 15px;
-}
-
-.project-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-}
-
-.project-image {
-    width: 30%;
-}
-
-.project-image img {
-    align-items: left;
-    border-radius: 15px 0 0 15px;
-    width: 100%;
-}
-
-.project-text {
-    width: 60%;
-    justify-content: left;
-    margin: 0 10px;
-}
-
-.project-name {
-    font-family: 'Lucida Console', monospace;
-    font-size: 30px;
-    justify-content: left;
-}
-
-.project-description {
-    font-family: Righteous;
-    letter-spacing: 1px;
-    font-size: 15px;
-}
-
-.break {
-    margin: 0 auto 10%;
 }
 
 .loader-wrapper {
