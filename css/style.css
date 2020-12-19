@@ -1,3 +1,4 @@
+@import url('fonts/Righteous-Regular.ttf');
 * {
 	font-family: 'Helvetica Neueu', Helvetica, Arial, sans-serif;
 	margin: 0;
@@ -12,7 +13,7 @@
 
 @font-face {
     font-family: 'Righteous';
-    src: local('fonts/Righteous-Regular.ttf')
+    src: url('fonts/Righteous-Regular.ttf') format('truetype');
 }
 
 html {
