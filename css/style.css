@@ -166,6 +166,38 @@ footer {
     .main-motto {
         font-size: 10px;
     }
+
+    .project {
+        width: 100% !important;
+        margin: 0 0 20px 0 !important;
+    }
+
+    .project-container {
+        border-radius: 15px;
+    }
+
+    .project-image {
+        width: 100% !important;
+    }
+
+    .project-image img {
+        border-radius: 15px 15px 0 0 !important;
+    }
+
+    .project-text {
+        width: 100% !important;
+        max-height: 30% !important;
+        text-align: center;
+    }
+
+    .project-name {
+        font-size: 30px !important;
+    }
+
+    .project-description {
+        font-size: 13px !important;
+        padding: 0 0 10px;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -184,6 +216,54 @@ footer {
     
     .main-motto {
         font-size: 10px;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+
+    .avatarblock {
+        width: 40%;
+    }
+
+    .project {
+        width: 40% !important;
+    }
+
+    .project-container {
+        border-radius: 15px;
+    }
+
+    .project-image {
+        width: 100% !important;
+    }
+
+    .project-image img {
+        border-radius: 15px 15px 0 0 !important;
+    }
+
+    .project-text {
+        width: 100% !important;
+        max-height: 30% !important;
+        text-align: center;
+    }
+
+    .project-name {
+        font-size: 40px !important;
+    }
+
+    .project-description {
+        font-size: 18px !important;
+        padding: 0 0 10px
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .project-text {
+        margin: 10px !important;
+    }
+
+    .project-image {
+        width: fit-content;
     }
 }
 
@@ -577,12 +657,13 @@ footer span {
 .project {
     width: 40%;
     margin: 20px;
-    position: relative;
+    /* position: relative; */
     background-color: white;
     border-radius: 15px;
 }
 
 .project-container {
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -601,20 +682,25 @@ footer span {
 
 .project-text {
     width: 60%;
+    height: 80%;
     justify-content: left;
-    margin: 0 10px;
+    margin: 20px 20px;
 }
 
 .project-name {
-    font-family: 'Lucida Console', monospace;
+    /* font-family: 'Lucida Console', monospace; */
+    font-family: Righteous;
     font-size: 30px;
     justify-content: left;
+    vertical-align: super;
+    height: 40%;
 }
 
 .project-description {
     font-family: Righteous;
     letter-spacing: 1px;
     font-size: 15px;
+    height: 50%;
 }
 
 .break {
