@@ -57,7 +57,7 @@
     <meta name="keywords" content="zenpai developer bot discord">
 
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/png" href="images/profile.png">
+    <link rel="icon" href="images/profile.png">
 
     <meta property="og:title" content="Zenpai.herokuapp.com">
     <meta property="og:description" content="Zenpai's Official Website.">
@@ -106,8 +106,8 @@
         <div class="project">
             <div class="project-container">
                 <div class="project-image">
-                    <a href="./projects/JavKing/home.html" target="_blank">
-                    <img src="images/JavKing.png">
+                    <a href="./projects/JavKing/home.html">
+                        <img src="images/JavKing.png">
                     </a>
                 </div>
                 <div class="project-text">
@@ -133,16 +133,31 @@
         </div>
     </div>
 
-    <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner"></span>
+    <div class="loading-wrapper">
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+        </div>
     </div>
 
     <!-- main JS -->
     <script src="js/main.js"></script>
     <script>
         $(window).on('load', function () {
-            $('.loader-wrapper').fadeOut('slow');
-            lineDrawing();
+            setTimeout(() => {
+                $('.sk-cube-grid').fadeOut('slow');
+                setTimeout(() => {
+                    $('.loading-wrapper').fadeOut('slow');
+                }, 1000);
+                lineDrawing();
+            }, 500);
         });
     </script>
     <script src="node_modules/animejs/lib/anime.min.js"></script>

@@ -83,8 +83,7 @@
     <div class="javking">
         <div class="mainblock">
             <div class="top">
-                <a href="https://discordapp.com/api/oauth2/authorize?client_id=694655522237972510&permissions=8&scope=bot"
-                    target="_blank">
+                <a href="https://discordapp.com/api/oauth2/authorize?client_id=694655522237972510&permissions=8&scope=bot">
                     <img class="bigavatar" src="../../images/JavKing_new_FINISHED.png"></a>
             </div>
             <div class="toptext">
@@ -133,7 +132,9 @@
 
     <script>
         $(window).on('load', function () {
-            $('.loader-wrapper').fadeOut('slow');
+            setTimeout(() => {
+                $('.loader-wrapper').fadeOut('slow');
+            }, 1000);
         });
     </script>
 </body>

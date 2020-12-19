@@ -450,7 +450,7 @@ footer span {
 
 .discord a i:hover {
 	color: rgb(125,148,221);
-	background-color: rgb(125,148,221);
+    background-color: rgb(125,148,221);
 }
 
 .twitch a i:hover {
