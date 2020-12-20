@@ -2,7 +2,11 @@
 	font-family: 'Helvetica Neueu', Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
-	text-decoration: none;
+    text-decoration: none;
+    user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
 
 @font-face {
@@ -108,6 +112,18 @@ footer {
 
 }
 
+@media screen and (max-width: 300px) {
+
+    .wb_button {
+		width: 200px !important;
+    }
+
+    .topbuttons {
+        align-items: center;
+        margin: auto;
+    }
+}
+
 @media screen and (max-width: 700px) {
 
 	.middle {
@@ -119,11 +135,17 @@ footer {
 	}
 
 	.wb_button {
-		width: 100px !important;
-		height: auto !important;
-	}
+		width: 300px;
+    }
+    
+    .topbuttons {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
 	.bigavatar {
-		width: 230px;
+		width: 200px;
 	}
 
 	.toptext h3 span {
@@ -178,9 +200,9 @@ footer span {
     font-size: 14px;
 	text-align: center;
     border: 2px solid #ffffff;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
     background: #ffffff none repeat left top;
     color: black;
     text-decoration: none;
@@ -192,9 +214,9 @@ footer span {
 	background-color: rgb(65, 65, 65);
 	color: white;
 	border: 2px solid rgb(65, 65, 65);
-	border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
+	border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
 .wb_button span {
@@ -211,10 +233,15 @@ footer span {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 0 10px;
 }
 
 .topbuttons div {
-	padding: 5px;
+    padding: 5px;
+}
+
+.topbuttons div a {
+    border-radius: 5px;
 }
 
 .stats img {
@@ -236,7 +263,7 @@ footer span {
 }
 
 .top {
-	padding: 30px;
+	padding: 20px;
 }
 
 .block {
@@ -279,138 +306,6 @@ footer span {
 	animation: glitch-2 2s linear infinite reverse;
 }
 
-@keyframes glitch-1 {
-	0% {
-	  clip: rect(132px, 350px, 101px, 30px);
-	}
-	5% {
-	  clip: rect(17px, 350px, 94px, 30px);
-	}
-	10% {
-	  clip: rect(40px, 350px, 66px, 30px);
-	}
-	15% {
-	  clip: rect(87px, 350px, 82px, 30px);
-	}
-	20% {
-	  clip: rect(137px, 350px, 61px, 30px);
-	}
-	25% {
-	  clip: rect(34px, 350px, 14px, 30px);
-	}
-	30% {
-	  clip: rect(133px, 350px, 74px, 30px);
-	}
-	35% {
-	  clip: rect(76px, 350px, 107px, 30px);
-	}
-	40% {
-	  clip: rect(59px, 350px, 130px, 30px);
-	}
-	45% {
-	  clip: rect(29px, 350px, 84px, 30px);
-	}
-	50% {
-	  clip: rect(22px, 350px, 67px, 30px);
-	}
-	55% {
-	  clip: rect(67px, 350px, 62px, 30px);
-	}
-	60% {
-	  clip: rect(10px, 350px, 105px, 30px);
-	}
-	65% {
-	  clip: rect(78px, 350px, 115px, 30px);
-	}
-	70% {
-	  clip: rect(105px, 350px, 13px, 30px);
-	}
-	75% {
-	  clip: rect(15px, 350px, 75px, 30px);
-	}
-	80% {
-	  clip: rect(66px, 350px, 39px, 30px);
-	}
-	85% {
-	  clip: rect(133px, 350px, 73px, 30px);
-	}
-	90% {
-	  clip: rect(36px, 350px, 128px, 30px);
-	}
-	95% {
-	  clip: rect(68px, 350px, 103px, 30px);
-	}
-	100% {
-	  clip: rect(14px, 350px, 100px, 30px);
-	}
-}
-
-@keyframes glitch-2 {
-	0% {
-	  clip: rect(129px, 350px, 36px, 30px);
-	}
-	5% {
-	  clip: rect(36px, 350px, 4px, 30px);
-	}
-	10% {
-	  clip: rect(85px, 350px, 66px, 30px);
-	}
-	15% {
-	  clip: rect(91px, 350px, 91px, 30px);
-	}
-	20% {
-	  clip: rect(148px, 350px, 138px, 30px);
-	}
-	25% {
-	  clip: rect(38px, 350px, 122px, 30px);
-	}
-	30% {
-	  clip: rect(69px, 350px, 54px, 30px);
-	}
-	35% {
-	  clip: rect(98px, 350px, 71px, 30px);
-	}
-	40% {
-	  clip: rect(146px, 350px, 34px, 30px);
-	}
-	45% {
-	  clip: rect(134px, 350px, 43px, 30px);
-	}
-	50% {
-	  clip: rect(102px, 350px, 80px, 30px);
-	}
-	55% {
-	  clip: rect(119px, 350px, 44px, 30px);
-	}
-	60% {
-	  clip: rect(106px, 350px, 99px, 30px);
-	}
-	65% {
-	  clip: rect(141px, 350px, 74px, 30px);
-	}
-	70% {
-	  clip: rect(20px, 350px, 78px, 30px);
-	}
-	75% {
-	  clip: rect(133px, 350px, 79px, 30px);
-	}
-	80% {
-	  clip: rect(78px, 350px, 52px, 30px);
-	}
-	85% {
-	  clip: rect(35px, 350px, 39px, 30px);
-	}
-	90% {
-	  clip: rect(67px, 350px, 70px, 30px);
-	}
-	95% {
-	  clip: rect(71px, 350px, 103px, 30px);
-	}
-	100% {
-	  clip: rect(83px, 350px, 40px, 30px);
-	}
-}  
-
 .icon {
 	padding: 20px;
 }
@@ -420,9 +315,8 @@ footer span {
 	font-size: 30px;
 	padding: 10px;
 	background-color: #232830;
-	transition: 0.3s;
 	border-radius: 5px;
-	transition: all 265ms ease-out;
+	transition: transform 265ms ease-out;
 }
 
 .icon a i:hover {
@@ -430,31 +324,40 @@ footer span {
 	cursor: pointer;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	transition: all 265ms ease-in;
-}
-
-.icon a:hover::before {
-	transform: scale(0);
-	transition: transform 265ms ease-in;
-}
-
-.icon a:hover i {
-	transform: scale(1.5);
-	transition: all 265ms ease-in;
 }
 
 .github a i:hover {
-	color: black;
 	background-color: black;
 }
 
 .discord a i:hover {
-	color: rgb(125,148,221);
     background-color: rgb(125,148,221);
 }
 
+#discord {
+    color: #fff;
+    background-color: rgb(125,148,221);
+    stroke: rgb(125,148,221);
+    margin-right: 5px;
+}
+
+#discord-btn {
+    background-color: #7289da;
+    border-color: #7289da;
+}
+
+#discord:hover {
+    stroke: rgb(99, 130, 230);
+    background-color: rgb(99, 130, 230);
+}
+
+#discord-btn:hover {
+    background-color:rgb(99, 130, 230);
+    border-color: rgb(99, 130, 230);;
+    transition: 265ms;
+}
+
 .twitch a i:hover {
-	color: rgb(145,71,255);
 	background-color: rgb(145,71,255);
 }
 
