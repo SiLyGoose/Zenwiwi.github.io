@@ -115,7 +115,7 @@ footer {
 @media screen and (max-width: 300px) {
 
     .wb_button {
-		width: 200px !important;
+		width: 250px;
     }
 
     .topbuttons {
@@ -135,7 +135,7 @@ footer {
 	}
 
 	.wb_button {
-		width: 300px;
+		width: 400px;
     }
     
     .topbuttons {
