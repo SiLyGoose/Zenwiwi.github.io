@@ -14,6 +14,11 @@
 	src: url('polices/Lato-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'Righteous';
+    src: url('/fonts/Righteous-Regular.ttf') format('truetype');
+}
+
 html {
 	width: 100%;
 	height: 100%;
@@ -28,6 +33,132 @@ body {
 	width: 100%;
 	background-color: #232830;
 	scrollbar-width: none;
+}
+
+nav {
+    background: transparent;
+    /* padding: 0 15px; */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu, .submenu {
+    list-style-type: none;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 5px;
+}
+
+.menu li.subitem a {
+    padding: 15px;
+}
+
+.toggle {
+    order: 1;
+    font-size: 20px;
+    padding: 0 15px;
+}
+
+.item.button {
+    order: 2;
+}
+
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.item a {
+    font-family: 'Righteous';
+}
+
+.active .item {
+    display: block;
+}
+
+.logo {
+    padding: 0 15px;
+}
+
+.logo img {
+    width: 48px;
+    padding: 7.5px 10px 7.5px 0;
+}
+
+.item.button {
+    padding: 9px 5px;
+}
+
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: #ccc;
+}
+
+.active {
+    background: #222;
+}
+
+.active .logo {
+    opacity: 0;
+}
+
+.active .item {
+    display: block;
+    background: #222;
+}
+
+.button.secondary {
+    /* solid line between item orders */
+    /* border-bottom: 1px #444 solid; */
+}
+
+.submenu {
+    display: none;
+}
+
+.submenu-active .submenu {
+    display: block;
+}
+
+.has-submenu > a::after {
+    font-family: FontAwesome;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900;
+    color: white;
+    content: "\f078";
+    padding-left: 5px;
+}
+
+.subitem a {
+    padding: 10px 15px;
+}
+
+.submenu-active {
+    background-color: #111;
+    border-radius: 3px;
+}
+
+h1 {
+    margin: 10px 0 10px;
+}
+
+h3 {
+    margin: 10px 0 15px;
 }
 
 body::-webkit-scrollbar {
@@ -67,14 +198,17 @@ a:hover, a:focus {
     overflow: hidden;
 }
 
-.toptext h1 {
+.toptext h1 span {
 	color: #ddaedb;
-	font: 700 48px Times New Roman, Times, serif;
+    font: 700 48px Times New Roman, Times, serif;
+    font-family: 'Righteous';
 	font-size: 50px;
 }
 
-.toptext h3 {
-	color: white;
+.toptext h3 span {
+    color: white;
+    font-family: 'Righteous';
+    letter-spacing: 2px;
 }
 
 footer {
@@ -95,15 +229,23 @@ footer {
 
 	.text {
 		transform: scale(1);
-	}
+    }
+    
+    .menu {
+        background: transparent !important;
+    }
 
 	.bigavatar {
-		width: 250px;
+		width: 350px;
 	}
 
 	.toptext h1 {
-		font-size: 40px;
-	}
+		font-size: 30px;
+    }
+    
+    h3 {
+        margin: 20px 0 20px;
+    }
 
 	.icon a i {
 		font-size: 20px;
@@ -115,7 +257,7 @@ footer {
 @media screen and (max-width: 300px) {
 
     .wb_button {
-		width: 250px;
+		width: 200px !important;
     }
 
     .topbuttons {
@@ -124,7 +266,34 @@ footer {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
+    .wb_button {
+        width: 300px !important;
+    }
+}
+
+@media all and (min-width: 700px) {
+
+    .menu {
+        justify-content: center;
+        background: #222;
+    }
+
+    .logo img {
+        flex: 1;
+    }
+
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
 
 	.middle {
 		padding: 0;
@@ -149,11 +318,59 @@ footer {
 	}
 
 	.toptext h3 span {
-		font-size: 25px;
+		font-size: 20px;
 	}
 }
 
-@media screen and (max-width: 900px) {
+@media all and (min-width: 960px) {
+
+    .logo img {
+        width: 60px;
+        /* padding: 7.5px 10px 7.5px 10px; */
+    }
+
+    .bigavatar {
+        width: 75%;
+    }
+
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+        font-size: 20px;
+    }
+
+    .item a {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .button {
+        order: 2;
+    }
+
+    .menu {
+        justify-content: left;
+    }
+
+    .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    .submenu-active {
+        border-radius: 0;
+        background: transparent;
+        color: white;
+    }
 
 	.middle {
 		padding: 0;
@@ -165,7 +382,7 @@ footer {
 
 	.top {
 		padding: 20px !important;
-	}
+    }
 }
 
 .pink {
@@ -226,7 +443,7 @@ footer span {
 }
 
 .toptext {
-	text-align: center;
+    text-align: center;
 }
 
 .topbuttons {
@@ -370,6 +587,22 @@ footer span {
 }
 
 .mainblock {
+    /* width: 100%; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.mainblock .top img {
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
 }
 
 .loader-wrapper {
@@ -455,34 +688,9 @@ footer span {
 	left: 0;
 }
 
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out
-}
-
-@keyframes octocat-wave {
-
-  0%,
-  100% {
-    transform: rotate(0)
-  }
-
-  20%,
-  60% {
-    transform: rotate(-25deg)
-  }
-
-  40%,
-  80% {
-    transform: rotate(10deg)
-  }
-}
-
-@media (max-width:500px) {
-  .github-corner:hover .octo-arm {
-    animation: none
-  }
-
-  .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out
-  }
+.styling {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }

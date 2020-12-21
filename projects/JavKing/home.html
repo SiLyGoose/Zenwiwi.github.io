@@ -65,6 +65,24 @@
     <script type="text/javascript">
         backgroundEffect('canvas');
     </script>
+
+    <div class="styling">
+        <nav>
+            <ul class="menu">
+                <li class="logo"><a href="/home.html"><img src="../../images/profile.png"></a></li>
+                <li class="item"><a href="/home.html">Home</a></li>
+                <li class="item has-submenu">
+                    <a tabindex="0">Contact</a>
+                    <ul class="submenu">
+                        <li class="subitem"><a href="#">Email - simonly976@gmail.com</a></li>
+                        <!-- <li class="subitem"><a href="#">Phone - (818)401-3069</a></li> -->
+                    </ul>
+                </li>
+                <li class="toggle"><a href="#"><i class="fa fa-bars"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
     <div class="javking">
         <div class="mainblock">
             <div class="top">
@@ -72,13 +90,15 @@
             </div>
             <div class="toptext">
                 <h1><span>JavKing</span></h1>
-                <h3><span>A Simple Discord musicbot</span>
+                <h3><span>A simple Discord musicbot</span>
                     <!--<span class="blue">Public BOT Closed</span>-->
                 </h3>
             </div>
             <div class="topbuttons">
                 <div>
-                    <a id="discord-btn" class="wb_button" href="https://discordapp.com/api/oauth2/authorize?client_id=694655522237972510&permissions=8&scope=bot" target="_blank">
+                    <a id="discord-btn" class="wb_button"
+                        href="https://discordapp.com/api/oauth2/authorize?client_id=694655522237972510&permissions=8&scope=bot"
+                        target="_blank">
                         <span style="color:#fff;"><i id="discord" class="fa fa-discord"></i>Add to Discord</span>
                     </a>
                 </div>
@@ -120,5 +140,50 @@
                 $('.loader-wrapper').fadeOut('slow');
             }, 1000);
         });
+        const toggle = document.querySelector('.toggle');
+        const menu = document.querySelector('.menu');
+
+        function toggleMenu() {
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                if (menu.querySelector('.submenu-active')) menu.querySelector('.submenu-active').classList.remove('submenu-active');
+                toggle.querySelector('a').innerHTML = "<i class='fa fa-bars'></i>";
+            } else {
+                menu.classList.add('active');
+                toggle.querySelector('a').innerHTML = "<i class='fa fa-times'></i>";
+            }
+        }
+
+        toggle.addEventListener('click', toggleMenu, false);
+
+        const items = document.querySelectorAll('.item');
+
+        function toggleItem() {
+            if (this.classList.contains('submenu-active')) {
+                this.classList.remove('submenu-active');
+            } else if (menu.querySelector('.submenu-active')) {
+                menu.querySelector('.submenu-active').classList.remove('submenu-active');
+                this.classList.add('submenu-active');
+            } else {
+                this.classList.add('submenu-active');
+            }
+        }
+
+        for (let item of items) {
+            if (item.querySelector('.submenu')) {
+                item.addEventListener('click', toggleItem, false);
+                item.addEventListener('keypress', toggleItem, false);
+            }
+        }
+
+        function closeSubmenu(e) {
+            let isClickInside = menu.contains(e.target);
+
+            if (!isClickInside && menu.querySelector('.submenu-active')) {
+                menu.querySelector('.submenu-active').classList.remove('.submenu-active');
+            }
+        }
+
+        document.addEventListener('click', closeSubmenu, false);
     </script>
 </body>

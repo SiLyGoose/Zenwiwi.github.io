@@ -20,7 +20,7 @@
 
 @font-face {
     font-family: 'Righteous';
-    src: url('../fonts/Righteous-Regular.ttf') format('truetype');
+    src: url('/fonts/Righteous-Regular.ttf') format('truetype');
 }
 
 html {
@@ -99,7 +99,8 @@ a:hover, a:focus {
 }
 
 .toptext h3 {
-	color: white;
+    color: white;
+    font-family: 'Righteous';
 }
 
 footer {
