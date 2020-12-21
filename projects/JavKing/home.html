@@ -18,7 +18,7 @@
         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
 
     <!-- Fork Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
@@ -115,17 +115,17 @@
         <div class="links">
             <div class="icon discord">
                 <a href="https://discord.gg/EXQn6bcqGv" target="_blank">
-                    <i class="fa fa-discord"></i>
+                    <i class="fab fa-discord"></i>
                 </a>
             </div>
             <div class="icon github">
                 <a href="https://github.com/Zenwiwi/JavKing-Bot" target="_blank">
-                    <i class="fa fa-github"></i>
+                    <i class="fab fa-github"></i>
                 </a>
             </div>
             <div class="icon twitch">
                 <a href="https://www.twitch.tv/javkingzero" target="_blank">
-                    <i class="fa fa-twitch"></i>
+                    <i class="fab fa-twitch"></i>
                 </a>
             </div>
         </div>
@@ -148,10 +148,10 @@
             if (menu.classList.contains('active')) {
                 menu.classList.remove('active');
                 if (menu.querySelector('.submenu-active')) menu.querySelector('.submenu-active').classList.remove('submenu-active');
-                toggle.querySelector('a').innerHTML = "<i class='fa fa-bars'></i>";
+                toggle.querySelector('a').innerHTML = "<i class='fas fa-bars'></i>";
             } else {
                 menu.classList.add('active');
-                toggle.querySelector('a').innerHTML = "<i class='fa fa-times'></i>";
+                toggle.querySelector('a').innerHTML = "<i class='fas fa-times'></i>";
             }
         }
 
