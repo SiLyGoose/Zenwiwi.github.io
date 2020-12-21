@@ -231,6 +231,10 @@ footer {
 		transform: scale(1);
     }
     
+    footer {
+        position: absolute;
+    }
+
     .menu {
         z-index: 1000;
         position: relative;
