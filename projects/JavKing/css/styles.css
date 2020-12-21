@@ -110,7 +110,7 @@ nav a {
 }
 
 .active {
-    background: #222;
+    background: #111;
 }
 
 .active .logo {
@@ -133,6 +133,7 @@ nav a {
 
 .submenu-active .submenu {
     display: block;
+    background: #111;
 }
 
 .has-submenu > a::after {
