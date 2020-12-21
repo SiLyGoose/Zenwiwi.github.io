@@ -254,6 +254,7 @@ footer {
 
 	.bigavatar {
 		width: 300px;
+                animation: none;
 	}
 
 	.toptext h1 {
