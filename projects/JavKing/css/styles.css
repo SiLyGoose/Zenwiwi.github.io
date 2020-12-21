@@ -337,6 +337,7 @@ footer {
 
 	.bigavatar {
 		width: 250px;
+                animation: none;
 	}
 
 	.toptext h3 span {
