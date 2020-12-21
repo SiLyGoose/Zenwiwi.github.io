@@ -147,6 +147,7 @@ nav a {
 
 .subitem a {
     padding: 10px 15px;
+    background-color: #111;
 }
 
 .submenu-active {
