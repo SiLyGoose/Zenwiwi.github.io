@@ -254,7 +254,7 @@ footer {
 
 	.bigavatar {
 		width: 300px;
-                animation: none;
+                animation: none !important;
 	}
 
 	.toptext h1 {
@@ -338,7 +338,7 @@ footer {
 
 	.bigavatar {
 		width: 250px;
-                animation: none;
+                animation: none !important;
 	}
 
 	.toptext h3 span {
