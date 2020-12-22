@@ -19,6 +19,7 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 
     <!-- Fork Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
@@ -66,20 +67,29 @@
     <script type="text/javascript">
         backgroundEffect('canvas');
     </script>
-
+    <div class="circle-container">
+        <div class="circle"></div>
+    </div>
     <div class="styling">
         <nav>
-            <ul class="menu">
-                <li class="logo"><a href="/home.html"><img src="../../images/profile.png"></a></li>
-                <li class="item"><a href="/home.html">Home</a></li>
-                <li class="item has-submenu">
+            <ul class="menu" id="mobile-menu">
+                <li class="logo"><a href="/home.html" onclick="delayUrlLoad('/home.html', 1.5); return false;"><img
+                            src="../../images/profile.png"></a></li>
+                <li class="item"><a href="#" tabindex="1">Home page</a></li>
+                <li class="item"><a href="#" tabindex="1">Commands</a></li>
+                <li class="item last-item"><a href="https://discord.gg/EXQn6bcqGv" tabindex="1">Community</a></li>
+                <!-- <li class="item has-submenu">
                     <a tabindex="0">Contact</a>
                     <ul class="submenu">
                         <li class="subitem"><a href="#">Email - simonly976@gmail.com</a></li>
-                        <!-- <li class="subitem"><a href="#">Phone - (818)401-3069</a></li> -->
+                        <li class="subitem"><a href="#">Phone - (818)401-3069</a></li>
                     </ul>
-                </li>
-                <li class="toggle"><a href="#"><i class="fa fa-bars"></i></a></li>
+                </li> -->
+                <li class="toggle"><a href="#">
+                        <div class="menu-btn">
+                            <div class="menu-btn__burger"></div>
+                        </div>
+                    </a></li>
             </ul>
         </nav>
     </div>
@@ -135,56 +145,5 @@
         <span class="loader"><span class="loader-inner"></span>
     </div>
 
-    <script>
-        $(window).on('load', function () {
-            setTimeout(() => {
-                $('.loader-wrapper').fadeOut('slow');
-            }, 1000);
-        });
-        const toggle = document.querySelector('.toggle');
-        const menu = document.querySelector('.menu');
-
-        function toggleMenu() {
-            if (menu.classList.contains('active')) {
-                menu.classList.remove('active');
-                if (menu.querySelector('.submenu-active')) menu.querySelector('.submenu-active').classList.remove('submenu-active');
-                toggle.querySelector('a').innerHTML = "<i class='fas fa-bars'></i>";
-            } else {
-                menu.classList.add('active');
-                toggle.querySelector('a').innerHTML = "<i class='fas fa-times'></i>";
-            }
-        }
-
-        toggle.addEventListener('click', toggleMenu, false);
-
-        const items = document.querySelectorAll('.item');
-
-        function toggleItem() {
-            if (this.classList.contains('submenu-active')) {
-                this.classList.remove('submenu-active');
-            } else if (menu.querySelector('.submenu-active')) {
-                menu.querySelector('.submenu-active').classList.remove('submenu-active');
-                this.classList.add('submenu-active');
-            } else {
-                this.classList.add('submenu-active');
-            }
-        }
-
-        for (let item of items) {
-            if (item.querySelector('.submenu')) {
-                item.addEventListener('click', toggleItem, false);
-                item.addEventListener('keypress', toggleItem, false);
-            }
-        }
-
-        function closeSubmenu(e) {
-            let isClickInside = menu.contains(e.target);
-
-            if (!isClickInside && menu.querySelector('.submenu-active')) {
-                menu.querySelector('.submenu-active').classList.remove('.submenu-active');
-            }
-        }
-
-        document.addEventListener('click', closeSubmenu, false);
-    </script>
+    <script src="./js/script.js"></script>
 </body>
