@@ -361,15 +361,6 @@ footer {
     .styling {
         display: none !important;
     }
-    .menu-container {
-        width: 60%;
-        /* height: auto; */
-        text-align: center;
-    }
-    .item {
-        display: inline-block;
-        width: fit-content;
-    }
     .middle {
         padding: 0;
     }
@@ -388,7 +379,7 @@ footer {
     }
     .bigavatar {
         width: 300px;
-        animation: float 6s ease-in-out infinite !important;
+        animation: none !important;
     }
     .toptext h1 {
         font-size: 30px;
@@ -502,7 +493,6 @@ footer {
     }
     .bigavatar {
         width: 75%;
-        animation: float 6s ease-in-out infinite !important;
     }
     .item {
         order: 1;

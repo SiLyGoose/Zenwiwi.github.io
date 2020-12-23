@@ -8,13 +8,29 @@ const toggle = document.querySelector('.toggle');
 const menu = document.querySelector('.menu');
 const logo = document.querySelector('.logo');
 const circle = document.querySelector('.circle');
+const menuHeader = document.querySelector('.styling');
+const menuContainer = document.querySelector('.menu-container');
 
 logo.addEventListener('click', () => {
     if (!$('.menu.active')[0]) circle.classList.add('expand');
 })
 
+/* TEST */
+
+function myFunction(x) {
+    $('#mobile-menu').toggleClass('menu-hidden', 800, 'easeOutQuint');
+}
+
+/* END */
+
+var menuList = $('.menu.active');
+menuList.attr('data-height', menuList.height()).addClass('collapse').removeClass('active');
+
 function toggleMenu() {
     menu.classList.toggle('active');
+    menuList.toggleClass('collapse').css('height', menuList.attr('data-height'));
+    menuHeader.classList.toggle('show');
+    menuContainer.classList.toggle('open-menu');
     // if (menu.classList.contains('active')) {
     // menu.classList.remove('active');
     // if (menu.querySelector('.submenu-active')) menu.querySelector('.submenu-active').classList.remove('submenu-active');
@@ -47,20 +63,21 @@ toggle.addEventListener('click', toggleMenu, false);
 //     }
 // }
 
-function closeSubmenu(e) {
-    let isClickInside = menu.contains(e.target);
+// function closeSubmenu(e) {
+//     let isClickInside = menu.contains(e.target);
 
-    if (!isClickInside || menu.querySelector('.submenu-active')) {
-        menu.querySelector('.submenu-active').classList.remove('.submenu-active');
-    }
-}
+//     if (!isClickInside || menu.querySelector('.submenu-active')) {
+//         menu.querySelector('.submenu-active').classList.remove('.submenu-active');
+//     }
+// }
 
-document.addEventListener('click', closeSubmenu, false);
+// document.addEventListener('click', closeSubmenu, false);
 
 const menuToggleBtn = document.querySelector('.menu-btn');
 // var menuOpen = false;
 function toggleMenuBtn() {
-    menuToggleBtn.classList.toggle('open')
+    menuToggleBtn.classList.toggle('open');
+    logo.classList.toggle('hidden');
     // if (!menuOpen) {
     //     menuToggleBtn.classList.add('open');
     //     menuOpen = true;

@@ -71,28 +71,35 @@
         <div class="circle"></div>
     </div>
     <div class="styling">
-        <nav>
-            <ul class="menu" id="mobile-menu">
-                <li class="logo"><a href="/home.html" onclick="delayUrlLoad('/home.html', 1.5); return false;"><img
-                            src="../../images/profile.png"></a></li>
-                <li class="item"><a href="#" tabindex="1">Home page</a></li>
-                <li class="item"><a href="#" tabindex="1">Commands</a></li>
-                <li class="item last-item"><a href="https://discord.gg/EXQn6bcqGv" tabindex="1">Community</a></li>
-                <!-- <li class="item has-submenu">
-                    <a tabindex="0">Contact</a>
-                    <ul class="submenu">
-                        <li class="subitem"><a href="#">Email - simonly976@gmail.com</a></li>
-                        <li class="subitem"><a href="#">Phone - (818)401-3069</a></li>
-                    </ul>
-                </li> -->
-                <li class="toggle"><a href="#">
-                        <div class="menu-btn">
-                            <div class="menu-btn__burger"></div>
-                        </div>
-                    </a></li>
-            </ul>
-        </nav>
+        <div class="logo">
+            <a href="/home.html" onclick="delayUrlLoad('/home.html', 1.5); return false;"><img
+                src="../../images/profile.png"></a>
+        </div>
+        <div class="toggle"><a href="#">
+                <div class="menu-btn" >
+                    <div class="menu-btn__burger"></div>
+                </div>
+            </a>
+        </div>
     </div>
+
+    <nav class="menu-container">
+        <ul class="menu active">
+            <!-- <li class="logo"><a href="/home.html" onclick="delayUrlLoad('/home.html', 1.5); return false;"><img
+                        src="../../images/profile.png"></a></li> -->
+            <li class="item"><a href="#" tabindex="1">Home page</a></li>
+            <li class="item"><a href="#" tabindex="1">Commands</a></li>
+            <li class="item"><a href="https://discord.gg/EXQn6bcqGv" tabindex="1">Community</a></li>
+            <li class="item last-item"><a href="/home.html" tabindex="1">Developer</a></li>
+            <!-- <li class="item has-submenu">
+                <a tabindex="0">Contact</a>
+                <ul class="submenu">
+                    <li class="subitem"><a href="#">Email - xx@gmail.com</a></li>
+                    <li class="subitem"><a href="#">Phone - (xxx)xxx-xxxx</a></li>
+                </ul>
+            </li> -->
+        </ul>
+    </nav>
 
     <div class="javking">
         <div class="mainblock">
