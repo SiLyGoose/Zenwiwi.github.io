@@ -45,6 +45,10 @@ nav a {
     text-decoration: none;
 }
 
+ul {
+    margin-bottom: 0 !important;
+}
+
 .menu-btn {
     position: relative;
     display: flex;
@@ -918,6 +922,7 @@ footer span {
     color: #222;
     display: inline-flex;
     background-color: #222;
+    overflow: hidden !important;
     opacity: 1;
 }
 
