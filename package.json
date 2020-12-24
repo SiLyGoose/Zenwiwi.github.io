@@ -1,0 +1,23 @@
+{
+  "name": "javking_site",
+  "version": "1.0.0",
+  "description": "<img alt=\"Zenpai\" src=\"./images/profile.png\" width=\"25%\"><br>",
+  "main": "index.js",
+  "dependencies": {
+    "animejs": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aznballer420/JavKing.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aznballer420/JavKing.github.io/issues"
+  },
+  "homepage": "https://github.com/aznballer420/JavKing.github.io#readme"
+}

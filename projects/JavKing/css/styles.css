@@ -348,7 +348,8 @@ a:hover, a:focus {
 
 footer {
     bottom: 0;
-    position: relative;
+    left: 0;
+    position: absolute;
     background: rgba(255, 255, 255, .05);
     width: 100%;
     display: flex;
@@ -915,7 +916,7 @@ footer span {
 
 .show {
     color: #222;
-    display: inline-flex !important;
+    display: inline-flex;
     background-color: #222;
     opacity: 1;
 }
