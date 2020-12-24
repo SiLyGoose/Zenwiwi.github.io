@@ -480,7 +480,7 @@ footer {
         width: 100%;
     }
     .bigavatar {
-        width: 250px;
+        width: 90%;
         animation: none !important;
     }
     .toptext h3 span {
@@ -910,6 +910,7 @@ footer span {
 
 .styling {
     box-sizing: border-box;
+    overflow: hidden !important;
     padding: 0;
     margin: 0;
     width: 100%;
