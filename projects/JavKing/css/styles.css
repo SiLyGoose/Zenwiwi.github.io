@@ -166,6 +166,8 @@ ul {
 .item a {
     font-family: 'Righteous';
     text-decoration: none;
+    width: fit-content;
+    margin-right: auto;
 }
 
 .item a:active {
@@ -357,6 +359,7 @@ footer {
     background: rgba(255, 255, 255, .05);
     width: 100%;
     display: flex;
+    overflow: hidden;
     justify-content: center;
     margin-top: 100%;
 }
@@ -922,7 +925,7 @@ footer span {
     width: 100%;
     display: inline-flex;
     align-items: center;
-    animation: slide .5s forwards;
+    animation: all .5s ease;
 }
 
 .show {
