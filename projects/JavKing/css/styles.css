@@ -361,6 +361,9 @@ footer {
     margin-top: 100%;
 }
 
+.menu-container {
+    overflow: hidden !important;
+}
 
 @media screen and (min-height: 800px), screen and (min-width: 700px) {
     .styling {
@@ -404,6 +407,9 @@ footer {
     .icon a i {
         font-size: 20px;
         padding: 7px;
+    }
+    .wb_button {
+        width: 200px;
     }
 }
 
@@ -578,7 +584,7 @@ footer span {
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    width: 198px;
+    /* width: 198px; */
     height: 42px;
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 14px;
@@ -925,6 +931,7 @@ footer span {
     background-color: #222;
     overflow: hidden !important;
     opacity: 1;
+    z-index: 1;
 }
 
 .hidden {
@@ -932,6 +939,6 @@ footer span {
     /* display: none; */
 }
 
-/* .open-menu {
-    animation: slide 1s backwards;
-} */
+.open-menu {
+    overflow: hidden !important;
+}
