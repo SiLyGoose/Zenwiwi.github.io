@@ -180,6 +180,9 @@ footer {
     .project-image img {
         border-radius: 15px 15px 0 0 !important;
     }
+    .clock {
+        margin-bottom: 15px !important;
+    }
     .project-text {
         width: 100% !important;
         max-height: 30% !important;
