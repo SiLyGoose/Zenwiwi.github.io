@@ -210,6 +210,13 @@ footer {
     .main-motto {
         font-size: 10px;
     }
+    .hero-circle {
+        width: 180px !important;
+        height: 180px !important;
+        margin: 10px auto !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
 }
 
 @media screen and (min-height: 1000px) {
@@ -644,9 +651,9 @@ footer span {
 }
 
 .hero-circle {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
+    width: 130px;
+    height: 130px;
+    margin: 10px;
     position: relative;
     border: 8px solid #fff;
     border-radius: 50%;
