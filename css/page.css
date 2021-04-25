@@ -4,6 +4,10 @@ body {
     font-family: "Muli", sans-serif
 }
 
+.emoji {
+    width: 1.75rem;
+}
+
 .dropdown-menu.show {
     transform: translate3d(0px, 38px, 0px) !important;
 }
@@ -195,6 +199,10 @@ pre {
         padding-right: 0px;
         padding-left: 24px;
     }
+    .btn.btn-zenpai.dropdown-toggle.dropdown-toggle-split.btn-marg {
+        padding-left: 4.5px;
+        padding-right: 4.5px;
+    }
     .zp-jumbotron-text {
         font-size: 2rem
     }
@@ -205,5 +213,11 @@ pre {
     }
     .zp-mobcenter {
         text-align: center
+    }
+    .dropdown-menu.show {
+        width: 100%;
+    }
+    .text-md-left {
+        text-align: center !important;
     }
 }
