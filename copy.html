@@ -10,7 +10,15 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!-- Moment -->
-    <script src="/js/moment.min.js"></script>
+    <script src="projects/Clock/js/moment.min.js"></script>
+
+    <!-- Latest compiled and minified bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
@@ -18,22 +26,20 @@
     <!-- Fork Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
         integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400&subset=latin-ext" rel="stylesheet">
-    <link id="avast_os_ext_custom_font"
-        href="chrome-extension://mbckjcfnjmoiinpgddefodcighgikkgn/common/ui/fonts/fonts.css" rel="stylesheet"
-        type="text/css">
 
     <!-- Latest compiled and minified bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Morphext/2.4.4/morphext.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Sweetalert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@1/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.js"></script>
 
-    <!-- <script src="/js/canvas.js"></script> -->
+    <script src="/js/canvas.js"></script>
 
     <!-- Github ribbon -->
-    <!-- <a href="https://github.com/Zenwiwi/" class="github-corner" aria-label="View source on GitHub">
+    <a href="https://github.com/Zenwiwi/" class="github-corner" aria-label="View source on GitHub">
         <svg width="80" height="80" viewBox="0 0 250 250"
             style="fill:#23272A; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
             <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -44,21 +50,16 @@
                 d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
                 fill="currentColor" class="octo-body"></path>
         </svg>
-    </a> -->
+    </a>
 
     <!-- Page info -->
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Zenpai</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Zenpai's official website.">
     <meta name="keywords" content="zenpai developer bot discord">
 
-    <!-- <link href="/css/wip.css" rel="stylesheet" type="text/css"> -->
-    <link href="/css/landing.css" rel="stylesheet" type="text/css">
-    <link href="/css/page.css" rel="stylesheet" type="text/css">
-    <link href="/css/blue.css" rel="stylesheet" type="text/css">
-
-
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="/images/profile.png" />
 
     <meta property="og:title" content="Zenpai.herokuapp.com">
@@ -70,11 +71,18 @@
 
 <body>
 
-    <!-- <canvas id="canvas"></canvas>
+    <canvas id="canvas"></canvas>
     <script type="text/javascript">
         backgroundEffect('canvas');
-    </script> -->
-    <!-- <div class="landing-content">
+    </script>
+
+    <div class="profile">
+        <div class="mainblock">
+            <div class="top">
+                <img class="avatarblock" src='./images/profile.png'>
+            </div>
+        </div>
+        <div class="borderline"></div>
         <div class="text-wrapper">
             <div class="line-drawing align-center">
                 <svg class="lines" width="247" height="77" viewBox="0 0 247 77" fill="none" stroke="#c6f6f6"
@@ -93,105 +101,84 @@
                         d="M246.266 7.79688C246.266 8.78646 246.07 9.71094 245.68 10.5703C245.315 11.4297 244.807 12.1849 244.156 12.8359C243.505 13.4609 242.737 13.9688 241.852 14.3594C240.992 14.724 240.068 14.9062 239.078 14.9062C238.089 14.9062 237.151 14.724 236.266 14.3594C235.406 13.9688 234.651 13.4609 234 12.8359C233.375 12.1849 232.867 11.4297 232.477 10.5703C232.112 9.71094 231.93 8.78646 231.93 7.79688C231.93 6.83333 232.112 5.92188 232.477 5.0625C232.867 4.17708 233.375 3.42188 234 2.79688C234.651 2.14583 235.406 1.63802 236.266 1.27344C237.151 0.882812 238.089 0.6875 239.078 0.6875C240.068 0.6875 240.992 0.882812 241.852 1.27344C242.737 1.63802 243.505 2.14583 244.156 2.79688C244.807 3.42188 245.315 4.17708 245.68 5.0625C246.07 5.92188 246.266 6.83333 246.266 7.79688ZM244.43 61H233.688V19.1641H244.43V61Z" />
                 </svg>
             </div>
-            <div class="main-description">
-                <h3>{cs student}</h3>
+            <div class="sub-motto">Computer Science Student</div>
+            <div class="break"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="project">
+            <div class="project-container">
+                <div class="project-image">
+                    <a href="./projects/JavKing/home.html" target="_new">
+                        <img src="images/JavKing.png">
+                    </a>
+                </div>
+                <div class="project-text">
+                    <div class="project-name">JavKing</div>
+                    <div class="project-description">
+                        Discord Music Bot written with JDK implementing Lavaplayer
+                    </div>
+                </div>
             </div>
         </div>
-    </div> -->
-
-    <div class="d-flex h-100 mx-auto flex-column">
-        <header class="masthead mb-auto"></header>
-        <main class="inner cover">
-            <div class="row">
-                <div class="col-lg-5 col-sm-12 offset-md-2 align-self-center order-2 order-lg-1">
-                    <h1 class="zp-big text-center text-md-left">Zenpai
-                        <!-- <a href="https://discordbots.org/bot/375750637540868107">
-                            <img src="https://discordbots.org/api/widget/servers/375750637540868107.svg" alt="">
-                        </a> -->
-                    </h1>
-                    <h3 class="text-center text-md-left"><span class="text-uppercase">cs student - </span><span
-                            id="morphtext" class="morphext"><span class="animated fadeIn">JS</span></span></h3>
-                    <!-- <p class="lead">
-                        Kyoko is a open-source, easy to use and powerful Discord bot which contains a lot of features
-                        you probably need such as an intuitive dashboard, customizable profiles, and leveling, currency
-                        system, moderation, auto-roles or advanced music player with cool features such as module
-                        player, nightcore or karaoke mode.
-                    </p> -->
-                    <div class="items">
-                        <div>
-                            <p class="lead header">
-                                What I do:
-                            </p>
-                            <p class="lead">
-                                Code, Game, Sleep, Repeat
-                            </p>
-                        </div>
-                        <div>
-                            <p class="lead header">
-                                Who I am:
-                            </p>
-                            <p class="lead list">
-                                Current Freshman at Cal Poly Pomona
-                            </p>
-                            <p class="lead">
-                                Lazy Programmer
-                            </p>
-                        </div>
-                    </div>
-                    <div class="btn-group btn-block-xs btn-mobfull">
-                        <!-- <a class="btn btn-zenpai btn-mobfull"
-                            href="https://discordapp.com/oauth2/authorize?&client_id=375750637540868107&scope=bot&permissions=2117598326"
-                            role="button">Contact Me</a> -->
-                        <div class="btn btn-zenpai btn-mobfull" style="pointer-events: none;">Contact Me</div>
-                        <button type="button" class="btn btn-zenpai dropdown-toggle dropdown-toggle-split btn-marg"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <!-- x-placement="bottom-start" -->
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="tel:+18184013069" target="_blank">
-                                Phone: (818)401-3069</a>
-                            <a class="dropdown-item" href="mailto:simonly976@gmail.com" target="_blank">
-                                Email: simonly976@gmail.com</a>
-                            <a class="dropdown-item" href="https://discordapp.com/users/257214680823627777"
-                                target="_blank">
-                                Discord: Zenpai#9925</a>
-                            <!-- <a class="dropdown-item" href="http://www.instagram.com/yl.simom" target="_blank">
-                                Instagram: yl.simom</a> -->
-                            <!--<a class="dropdown-item" href="https://discordapp.com/oauth2/authorize?&client_id=410390134538633216&scope=bot&permissions=2117598326">Cutting edge (unstable) invite</a>-->
-                        </div>
-                    </div>
-                    <!-- <span class="d-inline-block btn-mobfull" tabindex="0" data-toggle="tooltip" data-placement="top" title="Coming soon in v3!">
-                        <a class="btn btn-outline-success btn-mobfull disabled" style="pointer-events: none;" href="#" role="button">Dashboard</a>
-                  </span> -->
-                    <!--<a class="btn btn-outline-zenpai btn-mobfull" href="/dashboard" role="button">Dashboard <span class="beta">BETA</span></a>-->
-                    <a class="btn btn-outline-warning btn-mobfull disabled" href="https://discordservers.me/"
-                        role="button" style="cursor:not-allowed;pointer-events:all;">Projects</a>
-                    <p class="lead zp-topmarg">
-                        <a class="btn btn-outline-blurple btn-sm btn-mobfull" href="/projects/JavKing/home.html"
-                            role="button" target="_blank">JavKing</a>
-                        <!--<a class="btn btn-outline-blurple btn-sm btn-mobfull" href="https://listcord.com/bot/375750637540868107" role="button">Vote on Listcord</a>-->
-                        <a class="btn btn-outline-blurple btn-sm btn-mobfull" href="/projects/Clock/home.html"
-                            role="button" target="_blank">Clock.js</a>
-                        <a class="btn btn-outline-blurple btn-sm btn-mobfull" href="/projects/Donut/home.html"
-                            target="_blank">Donut.js</a>
-                        <!-- <a class="btn btn-outline-zenpai btn-sm btn-mobfull" href="/commands" role="button">Commands</a> -->
-                        <a class="btn btn-outline-light btn-sm btn-mobfull" href="https://github.com/Zenwiwi"
-                            role="button">GitHub</a>
-                        <!-- <span class="d-inline-block btn-mobfull" tabindex="0" data-toggle="tooltip" data-placement="top"
-                            title="" data-original-title="Not ready yet, coming soon!">
-                            <a class="btn btn-outline-light btn-sm disabled btn-mobfull" style="pointer-events: none;"
-                                href="stats" role="button">Stats</a>
-                        </span> -->
-                    </p>
+        <div class="project">
+            <div class="project-container">
+                <div class="project-image">
+                    <img src="images/Yuuno.png">
                 </div>
-                <div class="col-lg-3 col-sm-12 align-self-center order-1 order-lg-2">
-                    <img class="w-100 p-3 rounded-circle" src="images/profile.png" alt="v3 avatar is muuuch cuter OwO">
+                <div class="project-text">
+                    <div class="project-name">Yuuno</div>
+                    <div class="project-description">
+                        Multipurpose Discord.js Bot
+                    </div>
                 </div>
             </div>
-        </main>
-        <footer class="text-center mastfoot mt-auto"></footer>
+        </div>
+        <div class="project">
+            <div class="project-container">
+                <div class="project-image">
+                    <a href="./projects/Clock/home.html" target="_new">
+                        <div class="hero-circle">
+                            <div class="hero-face">
+                                <div id="hour" class="hero-hour"></div>
+                                <div id="minute" class="hero-minute"></div>
+                                <div id="second" class="hero-second"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-text">
+                    <div class="project-name clock">Digital Clock</div>
+                    <div class="project-description">
+                        Modern Digital Clock moment.js
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <footer id="footer">
+        <div class="links">
+            <!-- <div class="bottom-nav"> -->
+            <div class="icon discord">
+                <a href="https://discord.gg/EXQn6bcqGv">
+                    <i class="fa fa-discord"></i>
+                </a>
+            </div>
+            <div class="icon email">
+                <a href="mailto:simonly976@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="icon insta">
+                <a href="https://www.instagram.com/yl.simom">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <!-- </div> -->
+            <!-- <span>Contact Me</span> -->
+        </div>
+    </footer>
 
     <div class="loading-wrapper">
         <div class="sk-cube-grid">
@@ -209,14 +196,12 @@
 
     <!-- main JS -->
     <script src="/js/main.js"></script>
-    <script src="/js/jquery.lettering.js"></script>
-    <script type="text/javascript">
-        var jQuery_3_4_1 = $.noConflict(true);
-        jQuery_3_4_1(window).on('load', function () {
+    <script>
+        $(window).on('load', function () {
             setTimeout(() => {
-                jQuery_3_4_1('.sk-cube-grid').fadeOut('slow');
+                $('.sk-cube-grid').fadeOut('slow');
                 setTimeout(() => {
-                    jQuery_3_4_1('.loading-wrapper').fadeOut('slow');
+                    $('.loading-wrapper').fadeOut('slow');
                 }, 1000);
                 lineDrawing();
             }, 500);
@@ -236,32 +221,9 @@
                 direction: 'alternate',
                 loop: true
             });
-        };
+        }
     </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Morphext/2.4.4/morphext.min.js"></script>
-    <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?11.0"></script>
-    <script type="text/javascript">
-        twemoji.parse(document.body);
-        var jQuery_3_2_1 = $.noConflict(true);
-        jQuery_3_2_1("#morphtext").text("JS, Py").Morphext({
-            animation: "fadeIn",
-            separator: ",",
-            speed: 3000,
-        });
-    </script>
-    <script onload="window._theme()" src="js/blue.js"></script>
-    <script onload="window._callback()"
-        src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1247" height="902"></canvas>
+
 </body>
 
 </html>

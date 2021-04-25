@@ -1,0 +1,209 @@
+@import "themes.css";
+@import "dashboard.css";
+body {
+    font-family: "Muli", sans-serif
+}
+
+.dropdown-menu.show {
+    transform: translate3d(0px, 38px, 0px) !important;
+}
+
+.zp-header {
+    background-color: #ff4757
+}
+
+.zp-header h1 {
+    color: white;
+    font-size: 4rem
+}
+
+.zp-header .lead {
+    color: white
+}
+
+.header {
+    font-size: 1.5rem;
+    border-bottom: 2px solid white;
+    margin-bottom: 5px;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: -1em;
+}
+
+.list {
+    margin-bottom: 5px;
+}
+
+.zp-navbar {
+    transition: 500ms background-color linear
+}
+
+.jumbotron {
+    position: relative;
+    z-index: 0
+}
+
+.zp-spac {
+    margin-bottom: 40px
+}
+
+.mb-4-5 {
+    margin-bottom: 2rem
+}
+
+#bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+    width: 100%;
+    height: 100%
+}
+
+.zp-margin {
+    margin-bottom: 4rem
+}
+
+.zp-jumbotron-text {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2
+}
+
+.zp-jumbotron-text-small {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2
+}
+
+.zp-trans {
+    opacity: .6
+}
+
+.bg-dark {
+    background-color: #262626 !important
+}
+
+code {
+    color: #ff4757
+}
+
+.alert-warning {
+    background: #ff5722;
+    border-color: #802c11;
+    border-bottom-width: 2px;
+    color: white
+}
+
+.table {
+    border-radius: 3px
+}
+
+.table-dark {
+    box-shadow: 0 1px 0 1px #101010;
+    background-color: #202020
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+    border-color: #262626
+}
+
+.table-dark thead th {
+    border-top-color: #101010;
+    background-color: #262626
+}
+
+pre {
+    color: white
+}
+
+.colonalign dt {
+    display: block;
+    float: left;
+    width: 100px;
+    text-align: right
+}
+
+.colonalign dt:after {
+    content: ':'
+}
+
+.colonalign dd {
+    display: block
+}
+
+.btn-outline-blurple {
+    color: #7289DA;
+    background-color: transparent;
+    background-image: none;
+    border-color: #7289DA
+}
+
+.btn-outline-blurple:hover {
+    color: #fff;
+    background-color: #7289DA;
+    border-color: #7289DA
+}
+
+.btn-outline-blurple.focus, .btn-outline-blurple:focus {
+    box-shadow: 0 0 0 .2rem rgba(114, 137, 218, 0.5)
+}
+
+.btn-outline-zenpai {
+    color: #ff4757;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ff4757
+}
+
+.btn-outline-zenpai:hover {
+    color: #fff;
+    background-color: #ff4757;
+    border-color: #ff4757
+}
+
+.btn-outline-zenpai.focus, .btn-outline-zenpai:focus {
+    box-shadow: 0 0 0 .2rem rgba(255, 71, 86, 0.5)
+}
+
+.btn-zenpai {
+    color: #fff;
+    background-color: #dd3d4b;
+    border-color: #dd3d4b;
+}
+
+.btn-zenpai:hover {
+    color: #fff;
+    background-color: #ff4757;
+    border-color: #ff4757
+}
+
+.btn-zenpai.focus, .btn-zenpai:focus {
+    box-shadow: 0 0 0 .2rem rgba(255, 71, 86, 0.5)
+}
+
+@media screen and (max-width:768px) {
+    .btn.btn-zenpai.btn-mobfull {
+        padding-right: 0px;
+        padding-left: 24px;
+    }
+    .zp-jumbotron-text {
+        font-size: 2rem
+    }
+    .zp-jumbotron-text-small {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.2
+    }
+    .zp-mobcenter {
+        text-align: center
+    }
+}
