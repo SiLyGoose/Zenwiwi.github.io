@@ -41,13 +41,13 @@ jQuery(document).ready(function ($) {
 
 });
 
-setInterval(() => {
-    var now = moment(),
-        second = now.seconds() * 6,
-        minute = now.minutes() * 6 + second / 60,
-        hour = ((now.hours() % 12) / 12) * 360 + 90 + minute / 12;
+// setInterval(() => {
+//     var now = moment(),
+//         second = now.seconds() * 6,
+//         minute = now.minutes() * 6 + second / 60,
+//         hour = ((now.hours() % 12) / 12) * 360 + 90 + minute / 12;
 
-    jQuery_3_4_1('#hour').css("transform", "rotate(" + hour + "deg)");
-    jQuery_3_4_1('#minute').css("transform", "rotate(" + minute + "deg)");
-    jQuery_3_4_1('#second').css("transform", "rotate(" + second + "deg)");
-}, 1000);
+//     jQuery_3_4_1('#hour').css("transform", "rotate(" + hour + "deg)");
+//     jQuery_3_4_1('#minute').css("transform", "rotate(" + minute + "deg)");
+//     jQuery_3_4_1('#second').css("transform", "rotate(" + second + "deg)");
+// }, 1000);
