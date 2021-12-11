@@ -14,13 +14,16 @@ div.center video {
     position:fixed;
     /* object-fit: cover; */
     z-index: -5;
-    top: -10%;
+    bottom:0;
     left: 0;
     min-width: 100%;
     min-height: 100%;
 }
 
 .container {
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     padding: 50px;
