@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Happy Birthday ❤️</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="video-container">
+            <div class="center">
+                <video id="video" autoplay muted>
+                    <source src="./videos/VID_116200812_182411_688.mp4" id="source" type="video/mp4">
+                    <!-- <source src="./videos/VID_116221229_085518_847.mp4" id="elsa" type="video/mp4"> -->
+                </video>
+            </div>
+
+            <!-- <div class="center">
+                <video id="kaguya" muted>
+                    <source src="./videos/VID_116200812_182411_688.mp4" type="video/mp4">
+                </video>
+                <video id="elsa" muted>
+                    <source src="./videos/VID_116221229_085518_847.mp4" type="video/mp4">
+                </video>
+            </div> -->
+
+            <section>
+                <h2>Select the prize you want to redeem!</h2>
+                <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                <div>
+                <button class="btn">
+                    <img src="https://m.media-amazon.com/images/I/41ATA2Pr7EL._SS142_.jpg" height="250px">
+                    <p>eGirl Mousepad</p>
+                </button>
+                </div>
+                <div class="popup">
+                    <h2>Look up ❤️</h2>
+                    <b class="close">x</b>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <canvas id="my-canvas"></canvas>
+
+    <script src="./js/confetti.min.js"></script>
+    <script>
+        let button = document.getElementsByClassName("btn")[0];
+        let popup = document.getElementsByClassName("popup")[0];
+        let close = document.getElementsByClassName("close")[0];
+        let confettiD = document.getElementById("my-canvas");
+
+        button.onclick = function() {
+            popup.classList.toggle("active");
+            confettiD.classList.add("active");
+            var confettiSettings = { target: 'my-canvas', rotate: true, start_from_edge: true };
+            var confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
+        }
+
+        close.onclick = function() {
+            popup.classList.remove("active");
+            confettiD.classList.remove("active");
+        }
+
+        var list = ["./videos/VID_116200812_182411_688.mp4", "./videos/VID_116221229_085518_847.mp4"]
+        var count = 0;
+        var player = document.getElementById("video");
+        var video = document.getElementById("source");
+
+        player.addEventListener("ended", videoHandler, false);
+
+        function videoHandler(e) {
+            if (!e) {
+                e = window.event;
+            }
+            count++;
+            if (count > 1) count = 0;
+
+            player.classList.toggle("active1");
+            $(video).attr("src", list[count]);
+
+            player.load();
+            player.play();
+        }
+
+        // var first = "kaguya", second = "elsa";
+
+        // window.onload = function() {
+        //     document.getElementById(first).classList.add("active");
+        //     document.getElementById(first).addEventListener("ended", function() { playVideo(second); });
+        //     document.getElementById(second).addEventListener("ended", function() { playVideo(first); });
+        // }
+
+        // function playVideo(id) {
+        //     var list = [first, second]
+        //     var index = list.indexOf(id);
+        //     var deleted = list.splice(index, 1)[0];
+
+        //     var videoElement = document.getElementById(list[0]);
+        //     videoElement.classList.toggle("active");
+        //     var replaceElement = document.getElementById(deleted);
+        //     replaceElement.classList.toggle("active1");
+
+        //     videoElement.load();
+        //     videoElement.play();
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+div.center {
+    text-align: center;
+    z-index: -5;
+}
+
+div.center video {
+    position:fixed;
+    /* object-fit: cover; */
+    z-index: -5;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    /* height: 100%; */
+}
+
+.video-container {
+    position:relative;
+}
+
+#kaguya.active {
+    z-index: -1;
+}
+
+#elsa.active1 {
+    z-index: -1;
+}
+
+div.center video.active1 {
+    padding-top: 10% navy;
+    /* top: 0; */
+}
+
+section {
+    padding: 60px;
+    z-index: 6;
+}
+
+section > h2 {
+    text-align: center;
+    font-size: 5em;
+    margin-bottom: 10px;
+    z-index: 10;
+    color: #f5f5f5;
+}
+
+section p {
+    font-size: 1.1em;
+    z-index: 10;
+}
+
+section button {
+    position:relative;
+    padding: 15px 25px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+section div {
+    text-align:center;
+}
+
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 80%;
+    height: 50%;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1), 0 0 0 1000px rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    visibility: hidden;
+    font-size: 2em;
+}
+
+.popup.active {
+    visibility: visible;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    color: #555;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.close:hover {
+    color: #f00;
+    background: #ececec;
+}
+
+#my-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#my-canvas.active {
+    visibility: visible;
+}
