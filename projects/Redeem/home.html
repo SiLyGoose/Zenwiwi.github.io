@@ -62,6 +62,7 @@
             var confettiSettings = { target: 'my-canvas', rotate: true, start_from_edge: true };
             var confetti = new ConfettiGenerator(confettiSettings);
             confetti.render();
+            // document.getElementById("audio").play();
         }
 
         close.onclick = function() {
@@ -90,9 +91,17 @@
             player.play();
         }
 
-        // window.onload = function() {
+        $(document).on("click", function() {
+            document.getElementById("audio").play();
+        })
+
+        // window.onclick = function() {
         //     document.getElementById("audio").play();
         // }
+
+        window.onload = function() {
+            // document.getElementById("audio").resume();
+        }
 
         // var first = "kaguya", second = "elsa";
 
