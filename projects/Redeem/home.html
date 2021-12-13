@@ -9,7 +9,14 @@
 </head>
 
 <body>
-    <audio autoplay loop id="audio" src="./videos/song.mp3"></audio>
+    <audio loop id="audio" src="./videos/song.mp3"></audio>
+    <div id="audio-wrapper">
+        <div class="center">
+            <div class="mute">
+                <h2>Tap screen to unmute audio (be sure to have volume on!)</h2>
+            </div>
+        </div>
+    </div>
     <div class="container" id="screen">
         <div class="video-container">
             <div class="center">
@@ -30,8 +37,7 @@
 
             <section>
                 <h2>Select the prize you want to redeem!</h2>
-                <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-                <br></br><br></br><br></br><br></br>
+                <div class="break30"></div>
                 <div>
                 <button class="btn">
                     <img src="https://m.media-amazon.com/images/I/41ATA2Pr7EL._SS142_.jpg" height="250px">
@@ -93,37 +99,13 @@
 
         $(document).on("click", function() {
             document.getElementById("audio").play();
+            document.getElementById("video").play();
+            document.getElementById("audio-wrapper").style.visibility = "hidden";
         })
 
-        // window.onclick = function() {
-        //     document.getElementById("audio").play();
-        // }
-
         window.onload = function() {
-            // document.getElementById("audio").resume();
+            document.getElementById("video").pause();
         }
-
-        // var first = "kaguya", second = "elsa";
-
-        // window.onload = function() {
-        //     document.getElementById(first).classList.add("active");
-        //     document.getElementById(first).addEventListener("ended", function() { playVideo(second); });
-        //     document.getElementById(second).addEventListener("ended", function() { playVideo(first); });
-        // }
-
-        // function playVideo(id) {
-        //     var list = [first, second]
-        //     var index = list.indexOf(id);
-        //     var deleted = list.splice(index, 1)[0];
-
-        //     var videoElement = document.getElementById(list[0]);
-        //     videoElement.classList.toggle("active");
-        //     var replaceElement = document.getElementById(deleted);
-        //     replaceElement.classList.toggle("active1");
-
-        //     videoElement.load();
-        //     videoElement.play();
-        // }
     </script>
 </body>
 </html>
