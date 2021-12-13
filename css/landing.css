@@ -177,6 +177,9 @@ body {
     .btn-marg {
         margin-bottom: 5px;
     }
+    /* .cover {
+        background-color: rgba(38, 38, 38, 0.9);
+    } */
 }
 
 .loading-wrapper {
