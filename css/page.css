@@ -217,7 +217,7 @@ pre {
     .dropdown-menu.show {
         width: 100%;
     }
-    .text-md-left {
+    /* .text-md-left {
         text-align: center !important;
-    }
+    } */
 }
