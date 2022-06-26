@@ -1,0 +1,598 @@
+* {
+	box-sizing: border-box;
+}
+
+ul,
+li,
+div,
+html,
+nav,
+img,
+header,
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+a {
+	color: #05d3e0;
+}
+
+body {
+	line-height: 1;
+    color: #fff;
+    display: block;
+    background: #2c2a31;    
+}
+
+button {
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+ul {
+	list-style: none;
+}
+
+@font-face {
+	font-family: "Righteous";
+	src: url("/fonts/Righteous-Regular.ttf") format("truetype");
+}
+
+.box-selected {
+	display: -moz-box;
+	display: flex;
+	-moz-box-align: center;
+	align-items: center;
+	border: 2px solid #473c54;
+	color: #e0dde4;
+	cursor: pointer;
+	background: transparent;
+	-webkit-transition: 0.2s ease;
+	-moz-transition: 0.2s ease;
+	transition: 0.2s ease;
+	outline: none;
+}
+
+.box-selected-image {
+	border-radius: 50%;
+}
+
+.box-selected-name {
+	padding-left: 8px;
+	text-align: left;
+}
+
+.dashboard-theme {
+	background-color: #2c2a31;
+	border-bottom: 1px solid #3b3842;
+}
+
+.dropdown-box-arrow {
+	border: solid #8d819c;
+	border-width: 0 2px 2px 0;
+	height: 6px;
+	width: 6px;
+	display: inline-block;
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	margin: 0 8px 0 12px;
+	-webkit-transition: -webkit-transform 0.2s ease;
+	transition: -webkit-transform 0.2s ease;
+	-moz-transition: transform 0.2s ease, -moz-transform 0.2s ease;
+	transition: transform 0.2s ease;
+	transition: transform 0.2s ease, -webkit-transform 0.2s ease, -moz-transform 0.2s ease;
+}
+
+.font-body {
+    font-size: 10px;
+    font-style: normal;
+    font-family: Poppins,sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: normal;
+}
+
+.font-default {
+	font-family: "Righteous";
+	line-height: 1.5;
+	font-style: normal;
+	letter-spacing: normal;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.font-guild-title {
+    font-family: Poppins,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    font-style: normal;
+    letter-spacing: normal;
+}
+
+.guild-info-wrapper.active .guild-title {
+    font-family: Poppins,sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #fff;
+}
+
+.guild-container {
+	margin: 0 12px;
+	overflow-y: auto;
+	scrollbar-width: none;
+}
+
+.guild-image-wrapper {
+	overflow: hidden;
+	height: 54px;
+	flex-shrink: 0;
+	border-radius: 16px;
+	width: 54px;
+	border: 3px solid transparent;
+	transition: border 0.2s ease;
+}
+
+.guild-info-wrapper {
+    text-align: center;
+    overflow: hidden;
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-flex: 1;
+    flex: 1 1;
+    padding: 5px;
+    border-radius: 12px;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    transition: .2s ease;
+}
+
+.guild-info-wrapper.active {
+    /* background: -webkit-gradient(linear,left bottom,left top,from(#d15e8f),to(#6959cb));
+    background: -webkit-linear-gradient(bottom,#d15e8f,#6959cb);
+    background: -moz-linear-gradient(bottom,#d15e8f 0,#6959cb 100%);
+    background: linear-gradient(1turn,#d15e8f,#6959cb); */
+}
+
+.guild-list-button {
+	padding: 7px 0;
+	background-color: transparent;
+	border: none;
+	border-radius: 2px;
+	text-align: center;
+	cursor: pointer;
+	display: block;
+}
+
+.guild-list-wrapper {
+	display: -moz-box;
+	display: flex;
+	-moz-box-orient: vertical;
+	-moz-box-direction: normal;
+	flex-direction: column;
+	min-height: 0;
+}
+
+.guild-nav-link {
+	padding: 6px 0;
+}
+
+.guild-toolTip {
+    position: fixed;
+    display: none;
+    z-index: 1;
+    left: 90px;
+}
+
+.guild-pill {
+	display: none;
+	width: 6px;
+	height: 48px;
+	border-radius: 0 8px 8px 0;
+	-webkit-transform: scaleY(0);
+	-moz-transform: scaleY(0);
+	transform: scaleY(0);
+	-webkit-transition: 0.2s ease;
+	-moz-transition: 0.2s ease;
+	transition: 0.2s ease;
+	margin: 3px 0;
+}
+
+.guild-selection-link {
+	display: -moz-box;
+	display: flex;
+	position: relative;
+	text-decoration: none;
+}
+
+.guild-selection-link.active .guild-pill {
+	background-color: #d15e8f;
+	-webkit-transform: scaleY(1);
+	-moz-transform: scaleY(1);
+	transform: scaleY(1);
+}
+
+.guild-title {
+    color: #ada5b6;
+    margin-left: 8px;
+}
+
+.guild-toolTip-show-left:after,
+.guild-toolTip-show-right:after {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+    content: "";
+    position: absolute;
+    border: 6px solid transparent;
+}
+
+.guild-toolTip-show-left:after {
+    border-right-color: #3b3842;
+    right: 100%;
+}
+
+.header {
+	top: 0;
+	display: -moz-box;
+	display: flex;
+	position: sticky;
+	z-index: 2;
+	-moz-box-align: center;
+	align-items: center;
+	padding: 0 16px;
+	height: 56px;
+	-webkit-box-shadow: 0 5px 10px rgb(0 0 0 / 6%);
+	box-shadow: 0 5px 10px rgb(0 0 0 / 6%);
+}
+
+.header-nav {
+	-moz-box-align: center;
+	align-items: center;
+}
+
+.header-nav,
+.header-nav-list {
+	display: -moz-box;
+	display: flex;
+	height: 100%;
+}
+
+.header-user-login {
+	margin-left: 16px;
+}
+
+.header-user-login-dropdown {
+	position: relative;
+}
+
+.header-user-logged-in-btn {
+	border-width: 1px;
+	border-radius: 30px;
+	padding: 4px;
+}
+
+.header-user-logged-in-title {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 120px;
+	white-space: nowrap;
+	display: none;
+}
+
+.login-nav-wrapper {
+	display: -moz-box;
+	display: flex;
+	-moz-box-align: center;
+	align-items: center;
+	margin-left: auto;
+	height: 100%;
+}
+
+.logo-link {
+	text-decoration: none;
+	color: #fff;
+	display: -moz-box;
+	display: flex;
+	-moz-box-align: center;
+	align-items: center;
+}
+
+.logo-title {
+	margin-left: 5px;
+	display: none;
+}
+
+.logo-wrapper {
+	flex-shrink: 0;
+}
+
+.masthead {
+	margin-bottom: 2rem;
+}
+
+.masthead-brand {
+	margin-bottom: 0;
+}
+
+.music-nav {
+	display: -moz-box;
+	display: flex;
+	background: #2c2a31;
+	min-width: 96px;
+}
+
+.music-nav-center {
+	color: #8d819c;
+	-moz-box-orient: vertical;
+	-moz-box-direction: normal;
+	flex-direction: column;
+	-moz-box-flex: 1;
+	flex: 1 1;
+	padding: 10px 0;
+	display: -moz-box;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-shrink: 0;
+}
+
+.player-guild-container {
+	background-color: #1e1b21;
+	height: -webkit-calc(100vh - 56px - 114px);
+	height: -moz-calc(100vh - 56px - 114px);
+	height: calc(100vh - 56px - 114px);
+	overflow: auto;
+}
+
+.player-guild-list-btn {
+    padding: 7px 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.player-guild-list-btn.active .player-guilds-server-pill {
+	background-color: #d15e8f;
+}
+
+.player-guild-list-btn.active .player-guilds-server-category-wrapper {
+    color: #e0dde4;
+}
+
+.player-guild-nav {
+	display: -moz-box;
+	display: flex;
+	background: #2c2a31;
+	min-width: 96px;
+}
+
+.player-guilds-nav-container {
+	color: #8d819c;
+	-moz-box-orient: vertical;
+	-moz-box-direction: normal;
+	flex-direction: column;
+	-moz-box-flex: 1;
+	flex: 1 1;
+	padding: 10px 0;
+	display: -moz-box;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-shrink: 0;
+}
+
+.player-guilds-server-arrow.active {
+	border: solid #e0dde4;
+	border-width: 0 2px 2px 0;
+	height: 7px;
+	width: 7px;
+	display: inline-block;
+	-moz-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	display: none;
+}
+
+.player-guilds-server-mobile-arrow {
+    border: solid #8d819c;
+    border-width: 0 2px 2px 0;
+    height: 7px;
+    width: 7px;
+    display: inline-block;
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -webkit-transition: -webkit-transform .2s ease;
+    transition: -webkit-transform .2s ease;
+    -moz-transition: transform .2s ease,-moz-transform .2s ease;
+    transition: transform .2s ease;
+    transition: transform .2s ease,-webkit-transform .2s ease,-moz-transform .2s ease;
+}
+
+.player-guilds-server-mobile-arrow.active {
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.player-guilds-server-mobile-arrow-wrapper {
+    display: -moz-box;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.player-guilds-server-category-wrapper {
+	display: -moz-box;
+	display: flex;
+	-moz-box-pack: justify;
+	justify-content: space-between;
+	-moz-box-flex: 1;
+	flex: 1 1;
+}
+
+.player-guilds-server-count-container {
+	display: -moz-box;
+	display: flex;
+	-moz-box-align: center;
+	align-items: center;
+}
+
+.player-guilds-server-count {
+	color: #8d819c;
+	margin-left: 15px;
+	text-align: left;
+}
+
+.player-guilds-server-pill {
+	height: 16px;
+	width: 5px;
+	background-color: #6959cb;
+	border-radius: 0 5px 5px 0;
+}
+
+.size-lg-toolTip {
+    font-family: Poppins,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    font-style: normal;
+    letter-spacing: normal;
+    padding: 8px;
+}
+
+.toolTip {
+    /* display: inline-block; */
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #3b3842;
+    /* position: relative; */
+    /* -webkit-transition: visibility 0s linear 1s; */
+    /* -moz-transition: visibility 0s linear 1s; */
+    transition: visibility 0s linear 1s;
+}
+
+@media only screen and (min-width: 1024px) {
+	.guild-container {
+		margin: 0;
+	}
+
+	.guild-nav-link {
+		padding: 12px 0;
+	}
+
+	.guild-pill {
+		display: block;
+	}
+
+	.header {
+		padding: 0 40px;
+		height: 72px;
+	}
+
+	.logoTitle {
+		display: inline;
+	}
+
+	.font-default {
+		font-size: 16px;
+	}
+
+	.header-user-logged-in-title {
+		display: block;
+	}
+
+	.player-guild-container {
+		display: -moz-box;
+		display: flex;
+		height: -webkit-calc(100vh - 72px - 67px);
+		height: -moz-calc(100vh - 72px - 67px);
+		height: calc(100vh - 72px - 67px);
+	}
+
+	.player-guilds-nav-container {
+		width: 100%;
+	}
+
+	.player-guild-list-btn {
+		background-color: #2c2a31;
+		border: 1px solid #655a72;
+	}
+
+	.player-guild-list-btn.active {
+		background-color: #473c54;
+	}
+
+	.player-guilds-server-category-wrapper {
+		display: block;
+	}
+
+	.player-guilds-server-arrow.active {
+		display: inline-block;
+	}
+
+    .player-guild-list-btn.active .player-guilds-server-count {
+        color: #e0dde4;
+    }
+
+	.player-guilds-server-count {
+		margin-left: 0;
+		text-align: center;
+	}
+
+    .player-guilds-server-category-wrapper {
+        display: block;
+    }
+
+    .player-guilds-server-mobile-arrow {
+        display: none;
+    }
+
+    .guild-container {
+        margin: 0;
+    }
+
+    .guild-info-wrapper {
+        margin: 0 auto;
+        padding: 0;
+        -moz-box-pack: center;
+        justify-content: center;
+        background: none;
+    }
+
+    .guild-title {
+        display: none;
+    }
+    
+    .font-guild-title {
+        /* font-size: 14px; */
+    }
+
+    .guild-info-wrapper:hover .guild-toolTip {
+        display: inline-block;
+    }
+
+    .guild-selection-link.active .guild-image-wrapper {
+        border-color: #d15e8f;
+    }
+}
