@@ -1,0 +1,171 @@
+* {
+	box-sizing: border-box;
+}
+
+a,
+p,
+h3,
+h5,
+ul,
+li,
+div,
+html,
+nav,
+img,
+header,
+body,
+span {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+body {
+	background-color: #2c2a31;
+}
+
+button {
+	padding: 0;
+}
+
+canvas {
+    position: absolute;
+	height: 100%;
+	width: 100%;
+    z-index: -1000;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+}
+
+footer {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	background: rgba(255, 255, 255, .05);
+	width: 100%;
+	display: flex;
+	overflow: hidden;
+	justify-content: center;
+	margin-top: 100%;
+}
+
+.icon {
+    padding: 20px;
+}
+
+.icon a i {
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    background-color: #232830;
+    border-radius: 5px;
+    transition: transform 265ms ease-out;
+}
+
+.icon a i:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.github a i:hover {
+    background-color: black;
+}
+
+.discord a i:hover {
+    background-color: rgb(125, 148, 221);
+}
+
+.twitch a i:hover {
+    background-color: rgb(145, 71, 255);
+}
+
+
+html {
+	font-size: 100%;
+	scroll-behavior: smooth;
+}
+
+ul {
+	list-style: none;
+}
+
+.header {
+	top: 0;
+	position: sticky;
+	z-index: 2;
+	padding: 0 16px;
+	height: 56px;
+	-webkit-box-shadow: 0 5px 10px rgb(0 0 0 / 6%);
+	box-shadow: 0 5px 10px rgb(0 0 0 / 6%);
+}
+
+.pt-40-px {
+	padding-top: 40px!important;
+}
+
+.ml-16-px {
+	margin-left: 16px!important;
+}
+
+.px-16-px {
+	padding-left: 16px!important;
+	padding-right: 16px!important;
+}
+
+.mw-600-px {
+	max-width: 600px;
+}
+
+.main-content {
+	text-align: center;
+    -webkit-filter: drop-shadow(0 0 5px black);
+    filter: drop-shadow(0 0 5px black);
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-content-name {
+	color: #ddaedb;
+    font: 700 48px Times New Roman, Times, serif;
+    font-family: 'Righteous';
+    letter-spacing: 2px;
+    font-size: 50px;
+}
+
+.main-content-description {
+	color: white;
+    font-family: 'Righteous';
+    letter-spacing: 2px;
+}
+
+@media only screen and (min-width: 1024px) {
+	.main-content-wrapper {
+		max-width: 100%;
+		display: -moz-box;
+		display: flex;
+		-moz-box-orient: vertical;
+		-moz-box-direction: normal;
+		flex-direction: column;
+		max-width: 740px;
+		padding: 24px 96px;
+		border-radius: 8px;
+		background: inherit;
+	}
+
+	.main-content-image-wrapper {
+		/* height: 70%;
+		width: 30%;  */
+	}
+
+	#server-list-container {
+		height: 100%;
+	}
+
+	#server-list-wrapper {
+		height: calc(100vh - 72px - 90px);
+	}
+}

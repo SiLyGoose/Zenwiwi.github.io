@@ -12,19 +12,27 @@
 			crossorigin="anonymous"
 		/>
 
+		<!-- for fab fa-icons -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+
+
 		<!-- canvas background -->
-		<link href="./css/teststyles.css" rel="stylesheet" type="text/css" />
+		<link href="./src/players/css/styles1.css" rel="stylesheet" type="text/css" />
+		<link href="./src/players/css/styles.css" rel="stylesheet" type="text/css" />
 		<script src="../../js/canvas.js"></script>
 		<!-- end -->
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="./js/tscript.js"></script>
 	</head>
 
-	<body class="text-center">
+	<body class="text-center d-block">
 		<canvas id="canvas"></canvas>
 		<script type="text/javascript">
 			backgroundEffect("canvas");
 		</script>
 
-		<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+		<!-- <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 			<header class="masthead mb-auto">
 				<div class="inner">
 					<nav class="navbar navbar-expand-md fixed-top">
@@ -53,10 +61,51 @@
 					</nav>
 				</div>
 			</header>
+		</div> -->
+
+		<div id="home-page" class="min-vh-100 container-fluid mx-0 px-0 text-center home-page">
+			<header class="header header-theme d-flex">
+				<div id="logo-wrapper" class="flex-shrink-0 logo-wrapper">
+					<a id="logo-link" class="text-decoration-none color-white logo-link" href="/">
+						<span id="logo-title font-default-logo" class="font-default-logo logo-title">JavKing</span>
+					</a>
+				</div>
+				<div id="header-user-logged-in-nav-wrapper" class="h-100 ml-auto d-flex">
+					<nav id="header-nav" class="h-100 d-flex align-items-center"></nav>
+					<div id="header-user-login" class="ml-16px d-flex align-items-center"></div>
+				</div>
+			</header>
+			<div id="server-list-wrapper" class="pt-40-px p-0 align-items-center">
+				<div id="server-list-container" class="container color-white d-inline-flex align-items-center">
+					<div id="server-list-content-wrapper" class="mx-auto px-16-px mw-600-px main-content-wrapper">
+						<div id="server-list-header-container" class="main-content">
+							<h1 class="main-content-name">JavKing</h1>
+							<h3 class="main-content-description">A simple Discord MusicBot</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer id="footer">
+				<div class="links d-flex">
+					<div class="icon discord">
+						<a href="https://discord.gg/EXQn6bcqGv" target="_blank">
+							<i class="fab fa-discord"></i>
+						</a>
+					</div>
+					<div class="icon github">
+						<a href="https://github.com/Zenwiwi/JavKing-Bot" target="_blank">
+							<i class="fab fa-github"></i>
+						</a>
+					</div>
+					<div class="icon twitch">
+						<a href="https://www.twitch.tv/javkingzero" target="_blank">
+							<i class="fab fa-twitch"></i>
+						</a>
+					</div>
+				</div>
+			</footer>
 		</div>
 
         
-
-		<script src="./js/script.js"></script>
 	</body>
 </html>

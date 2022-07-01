@@ -1,5 +1,5 @@
 * {
-    font-family: 'Helvetica Neueu', Helvetica, Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -31,7 +31,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #232830;
+    background-color: #1e1b21;
     scrollbar-width: none;
 }
 
@@ -164,7 +164,7 @@ ul {
 }
 
 .item a {
-    font-family: 'Righteous';
+    font-family: Poppins, sans-serif;
     text-decoration: none;
     width: fit-content;
     margin-right: auto;
@@ -248,7 +248,7 @@ ul {
 
 .active .item {
     display: block;
-    /* background: #222; */
+    background: #2c2a31;
 }
 
 .button.secondary {
@@ -270,7 +270,7 @@ ul {
 }
 
 .has-submenu>a::after {
-    font-family: "Font Awesome 5 Free";
+    font-family: Poppins, sans-serif;
     font-size: 12px;
     line-height: 16px;
     font-weight: 900;
@@ -341,14 +341,14 @@ a:hover, a:focus {
 .toptext h1 span {
     color: #ddaedb;
     font: 700 48px Times New Roman, Times, serif;
-    font-family: 'Righteous';
+    font-family: Poppins, sans-serif;
     letter-spacing: 2px;
     font-size: 50px;
 }
 
 .toptext h3 span {
     color: white;
-    font-family: 'Righteous';
+    font-family: Poppins, sans-serif;
     letter-spacing: 2px;
 }
 
@@ -366,6 +366,10 @@ footer {
 
 .menu-container {
     overflow: hidden !important;
+}
+
+.header-theme {
+    background-color: #1e1b21!important;
 }
 
 @media screen and (min-height: 800px), screen and (min-width: 700px) {
@@ -420,10 +424,7 @@ footer {
     .wb_button {
         width: 200px !important;
     }
-    .topbuttons {
-        align-items: center;
-        margin: auto;
-    }
+    
     .collapse {
         height: 0 !important;
     }
@@ -486,14 +487,21 @@ footer {
     .topbuttons {
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
+        align-items: center;
+        margin: auto;
+        width: 80%;
     }
     .bigavatar {
-        width: 90%;
         animation: none !important;
     }
     .toptext h3 span {
         font-size: 20px;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .bigavatar {
+        animation: none !important;
     }
 }
 
@@ -515,8 +523,8 @@ footer {
         /* padding: 7.5px 10px 7.5px 10px; */
     }
     .bigavatar {
-        width: 75%;
-        animation: float 6s ease-in-out infinite !important;
+        width: 70%;
+        animation: float 6s ease-in-out infinite;
     }
     .item {
         order: 1;
@@ -589,7 +597,7 @@ footer span {
     position: relative;
     /* width: 198px; */
     height: 42px;
-    font-family: Tahoma, Geneva, sans-serif;
+    font-family: Poppins, sans-serif;
     font-size: 14px;
     text-align: center;
     border: 2px solid #ffffff;
@@ -709,7 +717,7 @@ footer span {
     color: white;
     font-size: 30px;
     padding: 10px;
-    background-color: #232830;
+    background-color: #1e1b21;
     border-radius: 5px;
     transition: transform 265ms ease-out;
 }
@@ -917,21 +925,27 @@ footer span {
     left: 0;
 }
 
-.styling {
-    box-sizing: border-box;
-    overflow: hidden !important;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-    animation: all .5s ease;
+.header {
+	top: 0;
+	display: -moz-box;
+	display: flex;
+	position: sticky;
+	z-index: 2;
+	-moz-box-align: center;
+	align-items: center;
+	padding: 0 16px;
+	height: 56px;
+    border-bottom: none!important;
+}
+
+.header a {
+    text-decoration: none;
 }
 
 .show {
-    color: #222;
+    color: #1e1b21;
     display: inline-flex;
-    background-color: #222;
+    background-color: #1e1b21;
     overflow: hidden !important;
     opacity: 1;
     z-index: 1;
@@ -944,4 +958,18 @@ footer span {
 
 .open-menu {
     overflow: hidden !important;
+}
+
+@media only screen and (min-width: 1024px) {
+    .header {
+		padding: 0 40px;
+		height: 72px;
+        -webkit-box-shadow: 0 5px 10px rgb(0 0 0 / 6%)!important;
+        box-shadow: 0 5px 10px rgb(0 0 0 / 6%)!important;
+	}
+
+    .header-theme {
+        background-color: #2c2a31!important;
+	    border-bottom: 1px solid #3b3842!important;
+    }
 }
