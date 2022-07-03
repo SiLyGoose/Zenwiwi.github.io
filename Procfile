@@ -1,2 +1,2 @@
-web: heroku-pfp-apache2
+web: php index.php
 node: npm start
