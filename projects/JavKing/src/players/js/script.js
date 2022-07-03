@@ -1,60 +1,55 @@
 // var sampleURL = "?access_token=7GucdFP80bdtMEVKk1w1eBgdezXHBI&token_type=Bearer&state=547956499545325589&guildIdList=289609899892015106,343572980351107077,449324919541727264,576722095526903828";
 const urlParameters = new URLSearchParams(location.search);
-var accessToken = urlParameters.get("access_token");
-var tokenType = urlParameters.get("token_type");
-var guildIdList = urlParameters.get("guildIdList")?.split("%2C");
+var id = urlParameters.get("id");
+
+var guildMember = {};
 
 $ = $.noConflict(true);
 
 const innerWidth = function (event) {
-    return event?.target?.innerWidth || event?.currentTarget?.innerWidth || event?.innerWidth;
-}
+	return event?.target?.innerWidth || event?.currentTarget?.innerWidth || event?.innerWidth;
+};
 
 const needChange = function ({ width }, newWidth) {
-    return !width || !newWidth || (width >= 1024 && newWidth < 1024) || (width < 1024 && newWidth >= 1024);
-}
+	return !width || !newWidth || (width >= 1024 && newWidth < 1024) || (width < 1024 && newWidth >= 1024);
+};
 
 const loaded = function (object) {
-    return object.html !== undefined || object.static;
-}
+	return object.html !== undefined || object.static;
+};
 
 const updated = function (object) {
-    // return object.updated;
-    return true;
-}
+	// return object.updated;
+	return true;
+};
 
 const addHrefListener = function (selector, { name, href }) {
-	console.log($(selector + name))
-    $(selector + name.toLowerCase()).click(function(event) {
-        event.preventDefault();
-        location.href = href;
-        return false;
-    });
-}
+	$(selector + name.toLowerCase()).click(function (event) {
+		event.preventDefault();
+		location.href = href;
+		return false;
+	});
+};
 
-const setAria = function (aria, value) {
-	$("body").attr(`aria-${aria}`, value);
-}
+const load = async function (event) {
+	localhostGet(`http://localhost:9925/guild-member/` + id ? `?id=${id}` : "", function (response) {
+		guildMember = response;
 
-const load = function (event) {
-	createHeaderNavItems(event);
-	createHeaderNavMenuDropdown(event);
+		createHeaderNavItems(event);
+		createHeaderNavMenuDropdown(event);
 
-	createHeaderNavUserItems(event);
-	createHeaderNavUserLogin(event);
+		createHeaderNavUserItems(event);
+		createHeaderNavUserLogin(event);
 
-	createServerItems(event);
-	addHrefListener(".logo-link", {name: "", href: "../../home.html"});
-
-	setAria("access-token", accessToken);
-	setAria("token-type", tokenType);
-	setAria("guild-id-list", guildIdList);
+		createServerItems(event);
+		addHrefListener(".logo-link", { name: "", href: "../../home.html" });
+	});
 
 	window.history.pushState("", "", "../players/dashboard.html");
 
 	setTimeout(() => {
-        $('.loader-wrapper').fadeOut('slow');
-    }, 1000);
+		$(".loader-wrapper").fadeOut("slow");
+	}, 1000);
 };
 
 const resize = function (event) {
@@ -77,7 +72,7 @@ const serverList = {};
 // constructs header nav links
 let headerNavItemList = [
 	{ name: "Commands", href: "../commands.html" },
-	{ name: "Dashboard", href: "./src/dashboard.html" },
+	{ name: "Dashboard", href: "#" },
 ];
 function createHeaderNavItems(event) {
 	let width = innerWidth(event);
@@ -92,11 +87,11 @@ function createHeaderNavItems(event) {
 		headerNavItems.html += `</ul>`;
 	} else {
 		headerNavItems.html = `<div class="header-nav-dropdown-wrapper dropdown-compartment dropdown-compartment-no-border">
-                                            <button id="menu" aria-expanded="false" type="button" class="box-selected">
-                                                <span class="box-selected-name font-friendly-menu">Menu</span>
-                                                <span class="dropdown-box-arrow"></span>
-                                            </button>
-                                        </div>`;
+                                    <button id="menu" aria-expanded="false" type="button" class="box-selected">
+                                        <span class="box-selected-name font-friendly-menu">Menu</span>
+                                        <span class="dropdown-box-arrow"></span>
+                                    </button>
+                                </div>`;
 	}
 
 	$(".header-nav").html(headerNavItems.html);
@@ -164,85 +159,85 @@ $(document).click(function (event) {
 
 function constructHeaderNavItem({ name, href }) {
 	return `<li class="font-header header-nav-link-list-item">
-                        <a class="header-nav-list-item" aria-id="nav-item-${name.toLowerCase()}" href="${href}">
-                            <span>${name}</span>
-                        </a>
-                    </li>`;
+                <a class="header-nav-list-item" aria-id="nav-item-${name.toLowerCase()}" href="${href}">
+                    <span>${name}</span>
+                </a>
+            </li>`;
 }
 
 function constructHeaderMenuItem({ name, href }) {
 	return `<li>
-                        <a class="font-friendly-menu-item dropdown-item-btn" aria-id="dropdown-item-btn-${name.toLowerCase()}" href="${href}">
-                            <span class="dropdown-option-item-name">${name}</span>
-                        </a>
-                    </li>`;
+                <a class="font-friendly-menu-item dropdown-item-btn" aria-id="dropdown-item-btn-${name.toLowerCase()}" href="${href}">
+                    <span class="dropdown-option-item-name">${name}</span>
+                </a>
+            </li>`;
 }
 
 function constructHeaderNavUserLoggedInDropdownItems({ name, icon }) {
 	return `<li>
-                        <button class="dropdown-item-btn font-friendly-dropdown" type="button">
-                            <span class="dropdown-item-btn-image-wrapper">
-                                <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
-                                    <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
-                                        <img aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
-                                    </span>
-                                    <img alt=${name} src=${icon} decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: fill;">
-                                    <noscript></noscript>
-                                </span>                                    
+                <button id="${name.toLowerCase()}" class="dropdown-item-btn font-friendly-dropdown" type="button">
+                    <span class="dropdown-item-btn-image-wrapper">
+                        <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
+                            <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
+                                <img aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
                             </span>
-                            <span class="dropdown-item-btn-name">${name}</span>
-                        </button>
-                    </li>`;
+                            <img alt=${name} src=${icon} decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: fill;">
+                            <noscript></noscript>
+                        </span>                                    
+                    </span>
+                    <span class="dropdown-item-btn-name">${name}</span>
+                </button>
+            </li>`;
 }
 
 function createHeaderNavUserLogin(event) {
 	if (loaded(headerNavUserLogin)) return;
 
-	httpGet("https://discord.com/api/v10/users/@me", function (response) {
-		headerNavUserLogin.width = innerWidth(event);
-		headerNavUserLogin.static = true;
-		headerNavUserLogin.html = `<div class="header-user-login-dropdown">
-									${createHeaderNavUserLoginBtn(response)}
+	headerNavUserLogin.width = innerWidth(event);
+	headerNavUserLogin.static = true;
+	headerNavUserLogin.html = `<div class="header-user-login-dropdown">
+									${createHeaderNavUserLoginBtn(guildMember)}
                            		</div>`;
 
-		$(".header-user-login").append(headerNavUserLogin.html);
+	$(".header-user-login").append(headerNavUserLogin.html);
 
-		const expanded = $(".header-user-logged-in-btn");
-		expanded.click(function (event) {
-			event.preventDefault();
-			var dropdownExist = $(".header-user-logged-in-dropdown").length;
-			toggleHeaderUserLoggedInDropdown(!dropdownExist);
-			return false;
-		});
+	const expanded = $(".header-user-logged-in-btn");
+	expanded.click(function (event) {
+		event.preventDefault();
+		var dropdownExist = $(".header-user-logged-in-dropdown").length;
+		toggleHeaderUserLoggedInDropdown(!dropdownExist);
+		return false;
+	});
 
-		const login = $(".button-compartment-hollow");
-		login.click(function (event) {
-			event.preventDefault();
-			location.href = "https://discord.com/api/oauth2/authorize?client_id=676672920625610753&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fguild-member-login-callback&response_type=code&scope=identify%20guilds&state=src/players/dashboard.html";
-			return false;
-		});
+	const login = $(".button-compartment-hollow");
+	login.click(function (event) {
+		event.preventDefault();
+		location.href =
+			"https://discord.com/api/oauth2/authorize?client_id=676672920625610753&redirect_uri=http://localhost:8080/guild-member-login-callback&response_type=code&scope=identify%20guilds&state=/src/players/dashboard.html";
+		return false;
 	});
 }
 
-function createHeaderNavUserLoginBtn(response) {
-	if (guildIdList === undefined) {
+function createHeaderNavUserLoginBtn({ id, data }) {
+	if (!id) {
 		return `<div class="button-compartment-hollow button-compartment-shape-rounded size-df-button">
 					<a class="button-tag capital-case">
 						<span class="button-content">
 							<span>Login</span>
 						</span>
 					</a>
-				</div>`
+				</div>`;
 	} else {
+		let { username, avatar } = data;
 		return `<button type="button" aria-expanded="false" class="box-selected header-user-logged-in-btn">
 					<span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
 						<span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
 							<img aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
 						</span>
-					<img alt="${response.username}" src="https://cdn.discordapp.com/avatars/${response.id}/${response.avatar}.png" decoding="async" data-nimg="intrinsic" class="box-selected-image" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: fill;">
+					<img alt="${username}" src="https://cdn.discordapp.com/avatars/${id}/${avatar}.png" decoding="async" data-nimg="intrinsic" class="box-selected-image" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: fill;">
 					<noscript></noscript>
 					</span>
-					<span class="box-selected-name header-user-logged-in-title font-default-user">${response.username}</span>
+					<span class="box-selected-name header-user-logged-in-title font-default-user">${username}</span>
 					<span class="dropdown-box-arrow"></span>
 				</button>`;
 	}
@@ -254,78 +249,90 @@ function createServerItems(event) {
 	serverList.width = width;
 	if (loaded(serverList) /*&& !updated(serverList)*/) constructServerItems(serverList);
 
-	httpGet("https://discord.com/api/v10/users/@me/guilds", function (responseList) {
-		responseList.sort((a, b) => {
-			let iA = guildIdList.indexOf(a.id);
-			let iB = guildIdList.indexOf(b.id);
-			if (iA == -1 || iB == -1 || iA > iB) {
-				return 1;
-			} else if (iA < iB) {
-				return -1;
-			} else {
-				return 0;
-			}
-		});
+	let {
+		data: { user_guild_list, mutual_guilds },
+	} = guildMember;
 
-		serverList.guildIdList = guildIdList;
-		serverList.responseList = responseList;
+	serverList.user_guild_list = user_guild_list;
+	serverList.mutual_guilds = mutual_guilds;
 
-		constructServerItems(serverList);
-	});
+	constructServerItems(serverList);
 }
 
-function constructServerItems({ guildIdList, html, mutual, responseList, width }) {
+function constructServerItems({ user_guild_list, html, mutual_guilds, width }) {
 	html = "";
-	for (let i = 0; i < responseList.length; i++) {
-		let response = responseList[i];
-		mutual = guildIdList.find((id) => id === response.id);
-		html += constructServerItem(response, mutual, width);
-	}
+	let max = 10;
+	if (mutual_guilds) {
+		let mutual_size = mutual_guilds.length;
+		for (let i = 0; i < mutual_guilds.push(...user_guild_list); i++) {
+			if (i >= max) {
+				$(".server-list-count-header").html(`showing ${i} servers`);
+				break;
+			}
+			let mutual = mutual_guilds[i];
+			html += constructServerItem(mutual, width, i < mutual_size);
+		}
 
-	$(".server-list").html(html);
-	$(".server-list-count-header").html(`showing ${responseList.length} servers`);
+		$(".server-list").html(html);
 
-	responseList.forEach((response) => {
-		$(`.button-tag[aria-id=item-${response.id}]`).click(function (event) {
-			event.preventDefault();
-			mutual = guildIdList.find((id) => id === response.id);
-			location.href = mutual
-				? "./guild/" + response.id
-				: `https://discord.com/api/oauth2/authorize?client_id=676672920625610753&guild_id=${response.id}&permissions=37055488&scope=bot&response_type=code&redirect_url=`;
-			return false;
+		mutual_guilds.forEach((guild) => {
+			$(`.button-tag[aria-id=item-${guild.id}]`).click(function (event) {
+				event.preventDefault();
+				let mutual = mutual_guilds.find((id) => id === guild.id);
+				location.href = mutual
+					? "./guild/" + guild.id
+					: `https://discord.com/api/oauth2/authorize?client_id=676672920625610753&guild_id=${guild.id}&permissions=37055488&scope=bot&response_type=code&redirect_url=`;
+				return false;
+			});
 		});
-	});
+	}	
 }
 
-function constructServerItem(response, mutual, width) {
+function constructServerItem({ name, id, icon }, width, mutual) {
 	return `<li class="server-list-item">
-                        <div class="server-name-logo-wrapper">
-                            <div class="server-logo-image-wrapper">
-                                <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
-                                    <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
-                                        <img aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
-                                    </span>
-                                    <img alt="${response.name}" src="https://cdn.discordapp.com/icons/${response.id}/${
-		response.icon
-	}.png" decoding="async" data-nimg="intrinsic" class="server-logo-image" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: fill;">
-                                    <noscript></noscript>
-                                </span>
-                            </div>
-                            <span class="server-name font-friendly-server-name">
-                                ${response.name}
+                <div class="server-name-logo-wrapper">
+                    <div class="server-logo-image-wrapper">
+                        <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
+                            <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
+                                <img aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
                             </span>
-                        </div>
-                        <div aria-mutual=${mutual ? "true" : "false"} class="server-list-item-action-button button-compartment size-sm-button-compartment">
-                            <a class="button-tag" aria-id="item-${response.id}">
-                                <span class="button-content">
-                                    <span>${mutual ? "Go to music room" : "Add JavKing"}</span>
-                                    <span class="button-compartment-icon ${width < 1024 ? "icon-hide" : ""} size-sm-button-compartment-icon">
-                                        <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="button-compartment-icon-svg"><path d="M6.26 14.327a1 1 0 0 0 1.48 1.346l-1.48-1.346ZM12 9.5l.74.673a1 1 0 0 0 0-1.346L12 9.5ZM7.74 3.327a1 1 0 1 0-1.48 1.346l1.48-1.346Zm0 12.346 5-5.5-1.48-1.346-5 5.5 1.48 1.346Zm5-6.846-5-5.5-1.48 1.346 5 5.5 1.48-1.346Z" fill="#000"></path></svg>
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                    </li>`;
+                            <img alt="${name}" src="https://cdn.discordapp.com/icons/${id}/${icon}.png" decoding="async" data-nimg="intrinsic" class="server-logo-image" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: fill;">
+                            <noscript></noscript>
+                        </span>
+                    </div>
+                    <span class="server-name font-friendly-server-name">
+                        ${name}
+                    </span>
+                </div>
+                <div aria-mutual=${mutual ? "true" : "false"} class="server-list-item-action-button button-compartment size-sm-button-compartment">
+                    <a class="button-tag" aria-id="item-${id}">
+                        <span class="button-content">
+                            <span>${mutual ? "Go to music room" : "Add JavKing"}</span>
+                            <span class="button-compartment-icon ${width < 1024 ? "icon-hide" : ""} size-sm-button-compartment-icon">
+                                <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="button-compartment-icon-svg"><path d="M6.26 14.327a1 1 0 0 0 1.48 1.346l-1.48-1.346ZM12 9.5l.74.673a1 1 0 0 0 0-1.346L12 9.5ZM7.74 3.327a1 1 0 1 0-1.48 1.346l1.48-1.346Zm0 12.346 5-5.5-1.48-1.346-5 5.5 1.48 1.346Zm5-6.846-5-5.5-1.48 1.346 5 5.5 1.48-1.346Z" fill="#000"></path></svg>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            </li>`;
+}
+
+function localhostDelete(url, callback) {
+	var xhr = new XMLHttpRequest();
+	xhr.callback = callback;
+	xhr.onload = xhrSuccess
+	xhr.onerror = xhrError;
+	xhr.open("DELETE", url, true);
+	xhr.send(null);
+}
+
+function localhostGet(url, callback) {
+	var xhr = new XMLHttpRequest();
+	xhr.callback = callback;
+	xhr.onload = xhrSuccess;
+	xhr.onerror = xhrError;
+	xhr.open("GET", url, true);
+	xhr.send(null);
 }
 
 function httpGet(url, callback) {
@@ -352,6 +359,13 @@ function toggleHeaderUserLoggedInDropdown(show) {
 		toggleHeaderNavMenuDropdown(false);
 		expanded.append(headerNavUserItems.html);
 		expanded.attr("aria-expanded", "true");
+		$(`#logout`).click(function (event) {
+			event.preventDefault();
+			localhostDelete(`http://localhost:9925/guild-member/remove/${id}`, function (response) {
+				location.href = "/projects/JavKing/src/players/dashboard.html";
+			});
+			return false;
+		});
 	} else {
 		$(".header-user-logged-in-dropdown").remove();
 		expanded.attr("aria-expanded", "false");
