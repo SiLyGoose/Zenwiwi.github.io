@@ -1,1 +1,1 @@
-node projects/JavKing/api/index.js
+node index.js
