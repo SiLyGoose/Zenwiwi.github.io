@@ -42,8 +42,9 @@ const load = async function (event) {
 		createHeaderNavUserLogin(event);
 
 		createServerItems(event);
-		addHrefListener(".logo-link", { name: "", href: "../../home.html" });
 	});
+
+	addHrefListener(".logo-link", { name: "", href: "../../home.html" });
 
 	window.history.pushState("", "", "../players/dashboard.html");
 
