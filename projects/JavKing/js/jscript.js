@@ -36,8 +36,8 @@ const addHrefListener = function (selector, { name, href }) {
 };
 
 const load = async function (event) {
-    // let url = `http://localhost:9925/guild-member` + (id ? `/${id}` : "");
-	localhostGet(`http://localhost:9925/guild-member/${id}`, function (response) {
+	// let url = `http://localhost:9925/guild-member` + (id ? `/${id}` : "");
+	localhostGet(`https://javking-api.herokuapp.com/guild-member/${id}`, function (response) {
 		guildMember = response;
 
 		createHeaderNavItems(event);
@@ -49,7 +49,7 @@ const load = async function (event) {
 
 	window.history.pushState("", "", "./home.html");
 
-    setTimeout(() => {
+	setTimeout(() => {
 		$(".loader-wrapper").fadeOut("slow");
 	}, 1000);
 };
@@ -245,7 +245,7 @@ function createHeaderNavUserLoginBtn({ id, data }) {
 function localhostDelete(url, callback) {
 	var xhr = new XMLHttpRequest();
 	xhr.callback = callback;
-	xhr.onload = xhrSuccess
+	xhr.onload = xhrSuccess;
 	xhr.onerror = xhrError;
 	xhr.open("DELETE", url, true);
 	xhr.send(null);
@@ -257,16 +257,6 @@ function localhostGet(url, callback) {
 	xhr.onload = xhrSuccess;
 	xhr.onerror = xhrError;
 	xhr.open("GET", url, true);
-	xhr.send(null);
-}
-
-function httpGet(url, callback) {
-	var xhr = new XMLHttpRequest();
-	xhr.callback = callback;
-	xhr.onload = xhrSuccess;
-	xhr.onerror = xhrError;
-	xhr.open("GET", url, true);
-	xhr.setRequestHeader("Authorization", `${tokenType} ${accessToken}`);
 	xhr.send(null);
 }
 
@@ -287,7 +277,7 @@ function toggleHeaderUserLoggedInDropdown(show) {
 		// make logout function
 		$(`#logout`).click(function (event) {
 			event.preventDefault();
-			localhostDelete(`http://localhost:9925/guild-member/remove/${id}`, function (response) {
+			localhostDelete(`https://javking-api.herokuapp.com/guild-member/remove/${id}`, function (response) {
 				location.href = "/projects/JavKing/home.html";
 			});
 			return false;

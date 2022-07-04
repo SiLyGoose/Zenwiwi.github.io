@@ -32,7 +32,7 @@ const addHrefListener = function (selector, { name, href }) {
 };
 
 const load = async function (event) {
-	localhostGet(`http://localhost:9925/guild-member/` + id ? `?id=${id}` : "", function (response) {
+	localhostGet(`https://javking-api.herokuapp.com/` + id ? `?id=${id}` : "", function (response) {
 		guildMember = response;
 
 		createHeaderNavItems(event);
@@ -361,7 +361,7 @@ function toggleHeaderUserLoggedInDropdown(show) {
 		expanded.attr("aria-expanded", "true");
 		$(`#logout`).click(function (event) {
 			event.preventDefault();
-			localhostDelete(`http://localhost:9925/guild-member/remove/${id}`, function (response) {
+			localhostDelete(`https://javking-api.herokuapp.com/guild-member/remove/${id}`, function (response) {
 				location.href = "/projects/JavKing/src/players/dashboard.html";
 			});
 			return false;
