@@ -336,7 +336,6 @@ function localhostGet(url, callback) {
 }
 
 function xhrSuccess() {
-	console.log(this.response)
 	this.callback(JSON.parse(this.response.replace(/\<|\>/gm, "")));
 }
 
