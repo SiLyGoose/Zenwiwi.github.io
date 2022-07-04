@@ -32,7 +32,7 @@ const addHrefListener = function (selector, { name, href }) {
 };
 
 const load = async function (event) {
-	localhostGet(`https://javking-api.herokuapp.com/` + id ? `?id=${id}` : "", function (response) {
+	localhostGet(`https://javking-api.herokuapp.com/guild-member/${id}`, function (response) {
 		guildMember = response;
 
 		createHeaderNavItems(event);
@@ -335,19 +335,9 @@ function localhostGet(url, callback) {
 	xhr.send(null);
 }
 
-function httpGet(url, callback) {
-	var xhr = new XMLHttpRequest();
-	xhr.callback = callback;
-	xhr.onload = xhrSuccess;
-	xhr.onerror = xhrError;
-	xhr.open("GET", url, true);
-	xhr.setRequestHeader("Authorization", `${tokenType} ${accessToken}`);
-	xhr.send(null);
-}
-
 function xhrSuccess() {
-	this.response = this.response.replace(/\<|\>/gm, "");
-	this.callback(JSON.parse(this.response));
+	console.log(this.response)
+	this.callback(JSON.parse(this.response.replace(/\<|\>/gm, "")));
 }
 
 function xhrError() {
