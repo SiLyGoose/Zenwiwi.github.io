@@ -346,7 +346,7 @@ function httpGet(url, callback) {
 }
 
 function xhrSuccess() {
-	this.response = this.response.replace(/\<|\>/g, "");
+	this.response = this.response.replace(/\<|\>/gm, "");
 	this.callback(JSON.parse(this.response));
 }
 
