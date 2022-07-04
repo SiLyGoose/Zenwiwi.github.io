@@ -246,6 +246,7 @@ function createHeaderNavUserLoginBtn({ id, data }) {
 
 function createServerItems(event) {
 	let width = innerWidth(event);
+	// console.log(!needChange(serverList, width))
 	if (!needChange(serverList, width)) return;
 	serverList.width = width;
 	if (loaded(serverList) /*&& !updated(serverList)*/) constructServerItems(serverList);
@@ -262,24 +263,23 @@ function createServerItems(event) {
 
 function constructServerItems({ user_guild_list, html, mutual_guilds, width }) {
 	html = "";
-	let max = 10;
 	if (mutual_guilds) {
 		let mutual_size = mutual_guilds.length;
-		for (let i = 0; i < mutual_guilds.push(...user_guild_list); i++) {
-			if (i >= max) {
-				$(".server-list-count-header").html(`showing ${i} servers`);
-				break;
-			}
-			let mutual = mutual_guilds[i];
+		let total_guilds = [...mutual_guilds, ...user_guild_list];
+		total_guilds.length = 10;
+		
+		for (let i = 0; i < total_guilds.length; i++) {
+			let mutual = total_guilds[i];
 			html += constructServerItem(mutual, width, i < mutual_size);
 		}
 
+		$(".server-list-count-header").html(`showing ${total_guilds.length} servers`);
 		$(".server-list").html(html);
 
-		mutual_guilds.forEach((guild) => {
+		total_guilds.forEach((guild) => {
 			$(`.button-tag[aria-id=item-${guild.id}]`).click(function (event) {
 				event.preventDefault();
-				let mutual = mutual_guilds.find((id) => id === guild.id);
+				let mutual = total_guilds.find((id) => id === guild.id);
 				location.href = mutual
 					? "./guild/" + guild.id
 					: `https://discord.com/api/oauth2/authorize?client_id=676672920625610753&guild_id=${guild.id}&permissions=37055488&scope=bot&response_type=code&redirect_url=`;
