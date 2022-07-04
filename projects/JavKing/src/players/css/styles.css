@@ -522,7 +522,7 @@ ul {
 }
 
 .header-nav-list-item {
-	text-decoration: none;
+	text-decoration: none!important;
 	color: #ada5b6;
 	height: 100%;
 	display: -moz-box;
