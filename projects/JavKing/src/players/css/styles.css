@@ -148,6 +148,7 @@ ul {
 
 .button-compartment-shape-rounded .button-tag {
 	border-radius: 31px!important;
+	text-decoration: none!important;
 }
 
 .server-list-item-action-button[aria-mutual=false] .button-tag {
@@ -625,7 +626,7 @@ ul {
 }
 
 .logo-link {
-	text-decoration: none;
+	text-decoration: none!important;
 	color: #fff;
 	display: -moz-box;
 	display: flex;
