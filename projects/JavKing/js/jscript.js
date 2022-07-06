@@ -1,5 +1,6 @@
 // var sampleURL = ""; //?access_token=7GucdFP80bdtMEVKk1w1eBgdezXHBI&token_type=Bearer&state=547956499545325589&guildIdList=289609899892015106,343572980351107077,449324919541727264,576722095526903828
-console.log(document.cookie);
+const urlParameters = new URLSearchParams(location.search);
+const id = urlParameters.get("id");
 
 var guildMember = {};
 
@@ -49,9 +50,6 @@ const addHrefListener = function (selector, { name, href }) {
 		return false;
 	});
 };
-
-var id = getCookie("SID");
-console.log(id)
 
 const develop = function (event) {
 	createHeaderNavItems(event);
