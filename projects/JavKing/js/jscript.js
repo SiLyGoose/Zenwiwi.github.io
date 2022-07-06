@@ -1,6 +1,5 @@
 // var sampleURL = ""; //?access_token=7GucdFP80bdtMEVKk1w1eBgdezXHBI&token_type=Bearer&state=547956499545325589&guildIdList=289609899892015106,343572980351107077,449324919541727264,576722095526903828
 console.log(document.cookie);
-var id = getCookie("SID");
 
 var guildMember = {};
 
@@ -23,7 +22,7 @@ const getCookie = function (cookieName) {
 }
 
 const innerWidth = function (event) {
-	return event?.target?.innerWidth || event?.currentTarget?.innerWidth || event?.innerWidth;
+	return event?.target?.innerWidth || event?.currentTarget?.innerWidth || event?.innerWidth || (typeof event == 'number' ? event : window.innerWidth);
 };
 
 const needChange = function ({ width }, newWidth) {
@@ -51,22 +50,31 @@ const addHrefListener = function (selector, { name, href }) {
 	});
 };
 
-const load = async function (event) {
+var id = getCookie("SID");
+console.log(id)
+
+const develop = function (event) {
+	createHeaderNavItems(event);
+	createHeaderNavMenuDropdown(event);
+
+	createHeaderNavUserItems(event);
+	createHeaderNavUserLogin(event);
+
+	setTimeout(() => {
+		$(".loader-wrapper").fadeOut("slow");
+	}, 1000);
+}
+
+const load = function (event) {
+	// javking-api.herokuapp.com
 	// let url = `http://localhost:9925/guild-member` + (id ? `/${id}` : "");
 	localhostGet(`https://javking-api.herokuapp.com/guild-member/${id}`, function (response) {
 		guildMember = response;
 
-		createHeaderNavItems(event);
-		createHeaderNavMenuDropdown(event);
-
-		createHeaderNavUserItems(event);
-		createHeaderNavUserLogin(event);
+		develop(event);
 
 		// window.history.pushState("", "", "./home.html");
 
-		setTimeout(() => {
-			$(".loader-wrapper").fadeOut("slow");
-		}, 1000);
 	});
 };
 
@@ -277,12 +285,12 @@ function localhostGet(url, callback) {
 }
 
 function xhrSuccess() {
-	console.log(this.response)
 	this.callback(JSON.parse(this.response.replace(/\<|\>/gm, "")));
 }
 
 function xhrError() {
 	console.error(this.statusText);
+	develop(window.innerWidth);
 }
 
 function toggleHeaderUserLoggedInDropdown(show) {
@@ -294,7 +302,7 @@ function toggleHeaderUserLoggedInDropdown(show) {
 		// make logout function
 		$(`#logout`).click(function (event) {
 			event.preventDefault();
-			localhostDelete(`https://javking-api.herokuapp.com/guild-member/remove/${id}`, function (response) {
+			localhostDelete(`https://localhost:9925/guild-member/remove/${id}`, function (response) {
 				location.href = "/projects/JavKing/home.html";
 			});
 			return false;
