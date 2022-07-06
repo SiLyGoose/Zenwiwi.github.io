@@ -1,10 +1,25 @@
 // var sampleURL = ""; //?access_token=7GucdFP80bdtMEVKk1w1eBgdezXHBI&token_type=Bearer&state=547956499545325589&guildIdList=289609899892015106,343572980351107077,449324919541727264,576722095526903828
-const urlParameters = new URLSearchParams(location.search);
-var id = urlParameters.get("id");
+var id = getCookie("SID");
 
 var guildMember = {};
 
 $ = $.noConflict(true);
+
+const getCookie = function (cookieName) {
+	let name = cookieName + "=";
+	let decodedCookie = decodeURIComponent(document.cookie);
+	let ca = decodedCookie.split(";");
+	for (let i = 0; i < ca.length; i++) {
+		let c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
+}
 
 const innerWidth = function (event) {
 	return event?.target?.innerWidth || event?.currentTarget?.innerWidth || event?.innerWidth;
@@ -37,7 +52,6 @@ const addHrefListener = function (selector, { name, href }) {
 
 const load = async function (event) {
 	// let url = `http://localhost:9925/guild-member` + (id ? `/${id}` : "");
-	console.log(document.cookie)
 	localhostGet(`https://javking-api.herokuapp.com/guild-member/${id}`, function (response) {
 		guildMember = response;
 
