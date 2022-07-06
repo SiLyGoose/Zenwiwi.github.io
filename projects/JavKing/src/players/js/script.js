@@ -42,15 +42,16 @@ const load = async function (event) {
 		createHeaderNavUserLogin(event);
 
 		createServerItems(event);
+
+		// window.history.pushState("", "", "../players/dashboard.html");
+	
+		setTimeout(() => {
+			$(".loader-wrapper").fadeOut("slow");
+		}, 1000);
 	});
 
 	addHrefListener(".logo-link", { name: "", href: "../../home.html" });
 
-	window.history.pushState("", "", "../players/dashboard.html");
-
-	setTimeout(() => {
-		$(".loader-wrapper").fadeOut("slow");
-	}, 1000);
 };
 
 const resize = function (event) {

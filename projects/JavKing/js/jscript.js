@@ -37,6 +37,7 @@ const addHrefListener = function (selector, { name, href }) {
 
 const load = async function (event) {
 	// let url = `http://localhost:9925/guild-member` + (id ? `/${id}` : "");
+	console.log(document.cookie)
 	localhostGet(`https://javking-api.herokuapp.com/guild-member/${id}`, function (response) {
 		guildMember = response;
 
@@ -45,13 +46,13 @@ const load = async function (event) {
 
 		createHeaderNavUserItems(event);
 		createHeaderNavUserLogin(event);
+
+		// window.history.pushState("", "", "./home.html");
+
+		setTimeout(() => {
+			$(".loader-wrapper").fadeOut("slow");
+		}, 1000);
 	});
-
-	window.history.pushState("", "", "./home.html");
-
-	setTimeout(() => {
-		$(".loader-wrapper").fadeOut("slow");
-	}, 1000);
 };
 
 const resize = function (event) {
