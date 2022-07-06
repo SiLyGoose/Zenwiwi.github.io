@@ -31,23 +31,27 @@ const addHrefListener = function (selector, { name, href }) {
 	});
 };
 
+const develop = function (event) {
+	createHeaderNavItems(event);
+	createHeaderNavMenuDropdown(event);
+
+	createHeaderNavUserItems(event);
+	createHeaderNavUserLogin(event);
+
+	createServerItems(event);
+
+	setTimeout(() => {
+		$(".loader-wrapper").fadeOut("slow");
+	}, 1000);
+}
+
 const load = async function (event) {
 	localhostGet(`https://javking-api.herokuapp.com/guild-member/${id}`, function (response) {
 		guildMember = response;
 
-		createHeaderNavItems(event);
-		createHeaderNavMenuDropdown(event);
-
-		createHeaderNavUserItems(event);
-		createHeaderNavUserLogin(event);
-
-		createServerItems(event);
+		develop(event);
 
 		// window.history.pushState("", "", "../players/dashboard.html");
-	
-		setTimeout(() => {
-			$(".loader-wrapper").fadeOut("slow");
-		}, 1000);
 	});
 
 	addHrefListener(".logo-link", { name: "", href: "../../home.html" });
@@ -343,6 +347,7 @@ function xhrSuccess() {
 
 function xhrError() {
 	console.error(this.statusText);
+	develop(window.innerWidth);
 }
 
 function toggleHeaderUserLoggedInDropdown(show) {
