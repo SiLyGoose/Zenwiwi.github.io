@@ -38,7 +38,11 @@ const develop = function (event) {
 	createHeaderNavUserItems(event);
 	createHeaderNavUserLogin(event);
 
-	createServerItems(event);
+	try {
+		createServerItems(event);
+	} catch { }
+
+	updateUsername(guildMember);
 
 	setTimeout(() => {
 		$(".loader-wrapper").fadeOut("slow");
@@ -77,7 +81,7 @@ const serverList = {};
 
 // constructs header nav links
 let headerNavItemList = [
-	{ name: "Commands", href: "../commands.html" },
+	{ name: "Commands", href: "./commands.html" },
 	{ name: "Dashboard", href: "#" },
 ];
 function createHeaderNavItems(event) {
@@ -256,6 +260,8 @@ function createServerItems(event) {
 	serverList.width = width;
 	if (loaded(serverList) /*&& !updated(serverList)*/) constructServerItems(serverList);
 
+	console.assert(guildMember.user_guild_list != undefined);
+
 	let {
 		data: { user_guild_list, mutual_guilds },
 	} = guildMember;
@@ -386,4 +392,10 @@ function toggleHeaderNavMenuDropdown(show) {
 		$(".box-selected-list-wrapper").remove();
 		expanded.attr("aria-expanded", "false");
 	}
+}
+
+function updateUsername({ data }) {
+	var username = data != undefined ? data.username : "#User";
+
+	$("#discord_user").html(`Hello, ${username}`);
 }

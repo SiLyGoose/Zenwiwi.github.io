@@ -90,7 +90,7 @@ const headerNavUserLogin = {};
 
 // constructs header nav links
 let headerNavItemList = [
-	{ name: "Commands", href: "../commands.html" },
+	{ name: "Commands", href: "./commands.html" },
 	{ name: "Dashboard", href: "./src/players/dashboard.html" },
 ];
 
