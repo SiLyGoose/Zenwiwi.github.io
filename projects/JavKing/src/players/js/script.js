@@ -32,6 +32,8 @@ const addHrefListener = function (selector, { name, href }) {
 };
 
 const develop = function (event) {
+	serverList.width = innerWidth(event);
+
 	createHeaderNavItems(event);
 	createHeaderNavMenuDropdown(event);
 
@@ -59,7 +61,6 @@ const load = async function (event) {
 	});
 
 	addHrefListener(".logo-link", { name: "", href: "../../home.html" });
-
 };
 
 const resize = function (event) {
@@ -353,7 +354,7 @@ function xhrSuccess() {
 
 function xhrError() {
 	console.error(this.statusText);
-	develop(window.innerWidth);
+	develop(window);
 }
 
 function toggleHeaderUserLoggedInDropdown(show) {

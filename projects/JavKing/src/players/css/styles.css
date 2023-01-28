@@ -131,6 +131,11 @@ ul {
 	color: #fff;
 }
 
+.button-compartment-hollow .button-tag:hover {
+	background-color: #fff;
+	color: #2c2a31;
+}
+
 .button-compartment-icon-show {
 	display: none;
 }
