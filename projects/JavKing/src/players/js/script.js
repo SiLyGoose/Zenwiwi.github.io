@@ -147,8 +147,8 @@ function createHeaderNavUserItems(event) {
 	headerNavUserItems.html = `<ul class="box-selected-list-wrapper header-user-logged-in-dropdown">`;
 	// TODO: add redirects to items
 	var headerNavUserLoggedInDropdownItems = [
-		{ name: "Logout", icon: "/images/logout.svg" },
 		{ name: "My Servers", icon: "/images/myServers.svg" },
+		{ name: "Logout", icon: "/images/logout.svg" },
 	];
 	for (let i = 0; i < headerNavUserLoggedInDropdownItems.length; i++) {
 		headerNavUserItems.html += constructHeaderNavUserLoggedInDropdownItems(headerNavUserLoggedInDropdownItems[i]);
@@ -275,7 +275,7 @@ function createServerItems(event) {
 
 function constructServerItems({ user_guild_list, html, mutual_guilds, width }) {
 	html = "";
-	if (mutual_guilds) {
+	if (guildMember.id) {
 		let mutual_size = mutual_guilds.length;
 		let total_guilds = [...mutual_guilds, ...user_guild_list];
 		total_guilds.length = 10;
